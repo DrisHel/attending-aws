@@ -1,0 +1,56 @@
+Scaling do Amazon EC2
+
+Escalabilidade e Elasticidade
+
+Escalabilidade = capacidade de uma empresa crescer atendendo as demandas sem perder a qualidade que lhe agregam valor.
+Elasticidade = é o tamanho do impacto que a alteração em uma variável exerce sobre outra variável.
+
+
+----------------------------------------------------------------------------------------------------------
+
+Escalabilidade
+
+A escalabilidade envolve começar apenas com os recursos de que você precisa e projetar sua arquitetura para 
+responder automaticamente às alterações de demanda, fazendo aumentos ou reduções. Como resultado, você paga apenas
+pelos recursos que usa. Você não precisa se preocupar com a falta de capacidade de computação para atender às
+necessidades de seus clientes.
+
+No Amazon EC2 Auto Scaling, há duas abordagens disponíveis: scaling dinâmico e scaling preditivo.
+
+O scaling dinâmico responde às alterações na demanda. 
+O scaling preditivo programa automaticamente o número correto de instância do Amazon EC2 com base na demanda prevista.
+
+
+Amazon EC2 Auto Scaling
+
+Se você já tentou acessar um site que não carregava e atingiu o tempo limite algumas vezes,
+ele pode ter recebido mais solicitações do que conseguia atender. Essa situação é semelhante a
+esperar em uma longa fila em uma cafeteria quando há apenas um barista disponível para registrar os pedidos dos clientes.
+
+Se você não especificar o número desejado de instâncias do Amazon EC2 em um grupo do Auto Scaling, a capacidade desejada se
+tornará a capacidade mínima regular.
+
+
+>>capacidade mínima
+
+é o número de instâncias do Amazon EC2 que são executadas imediatamente após a criação do grupo de Auto Scaling
+
+
+>>capacidade desejada
+
+como duas instâncias do Amazon EC2, mesmo que o aplicativo precise de um mínimo de uma única instância 
+do Amazon EC2 para que seja executado.
+
+
+>>capacidade máxima
+
+você pode configurar o grupo do Auto Scaling para aumentar em resposta à demanda elevada, mas apenas para
+um máximo de quatro instâncias do Amazon EC2.
+
+
+Elastic Load Balancing
+
+O Elastic Load Balancing é o serviço AWS que distribui automaticamente o tráfego de entrada de aplicativos entre vários recursos, 
+como instâncias do Amazon EC2.
+Embora o Elastic Load Balancing e o Amazon EC2 Auto Scaling sejam serviços separados, eles trabalham juntos para que os aplicativos 
+executados no Amazon EC2 possam fornecer alto desempenho e disponibilidade.
