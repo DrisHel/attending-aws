@@ -1,0 +1,12 @@
+Objetivos de aprendizado
+
+Conteúdo:
+
+- Descrever os benefícios do Amazon EC2 em um nível básico.
+- Identificar os diferentes tipos de instâncias do Amazon EC2.
+- Diferenciar entre as várias opções de cobrança do Amazon EC2.
+- Resumir os benefícios do Amazon EC2 Auto Scaling.
+- Resumir os benefícios do Elastic Load Balancing.
+- Dar um exemplo dos usos do Elastic Load Balancing.
+- Resumir as diferenças entre o Amazon Simple Notification Service (Amazon SNS) e o Amazon Simple Queue Service (Amazon SQS).
+- Resumir outras opções de computação da AWS.
