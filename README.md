@@ -9,6 +9,9 @@ The course in question is AWS (Amazon Web Services), a cloud computing platform 
 - Introduction to AWS
 - Module 1 :books: - Introduction, cloud computing and quiz.
 - Module 2 :books: - Introduction, Amazon EC2 Instance Types, Pricing, Amazon Scaling, Traffic Directing, Messaging and Queuing, Other Compute Services, Summary and Questionnaire.
+
+:calendar: ** On 04/02/2022 the following topics were covered: **
+
 - Module 3 :books: - Global infrastructure
 - Module 4 :books: - Networks
 - Module 5 :books: - Storage and database
