@@ -1,0 +1,58 @@
+
+
+A interação com os serviços AWS é feito por APIs, tudo é uma chamada API.Uma API é uma interface de programação 
+de aplicação. Isso significa que há maneiras pré-determinadas de interagir com o serviço da AWS
+
+
+Maneiras de interagir com os serviços AWS
+
+
+O AWS Management Console é uma interface baseada na web para acessar e gerenciar os serviços AWS. 
+Você pode acessar rapidamente os serviços usados recentemente e pesquisar outros serviços por nome, 
+palavra-chave ou acrônimo. O console inclui assistentes e fluxos de trabalho automatizados que podem simplificar 
+o processo de conclusão de tarefas.
+
+
+Para economizar tempo ao fazer solicitações de API, você pode usar o AWS Command Line Interface (AWS CLI).
+ O AWS CLI permite que você controle vários serviços AWS diretamente a partir da linha de comando em uma 
+ ferramenta. O AWS CLI está disponível para usuários no Windows, macOS e Linux.
+
+Usando o AWS CLI, você pode automatizar as ações que seus serviços e aplicativos executam por scripts. 
+Por exemplo, você pode usar comandos para executar uma instância do Amazon EC2, conectar uma instância do
+ Amazon EC2 a um grupo específico de Auto Scaling e muito mais.
+
+ Outra opção para acessar e gerenciar serviços AWS são os kits de desenvolvimento de software (SDKs).
+Os SDKs facilitam o uso dos serviços AWS por uma API projetada para sua linguagem de programação ou
+plataforma. Os SDKs permitem que você use serviços AWS com seus aplicativos existentes ou crie aplicativos 
+totalmente novos que serão executados na AWS.
+
+A automação é muito importante para que a sua implantação na nuvem ocorra de forma previsível e bem-sucedida ao 
+longo do tempo. Outra maneira de interagir com a AWS é por meio dos Kits de desenvolvimento de software da AWS,
+ as SDKs. As SDKs permitem que você interaja com os recursos da AWS por meio de várias linguagens de programação. 
+ Isso torna mais fácil para os desenvolvedores criarem aplicações que usam as AWS sem utilizar APIs de baixo nível, 
+ evitar a criação manual de recursos que acabamos de falar. Falaremos sobre isso daqui a pouco.
+
+
+ O AWS Elastic Beanstalk é um serviço que ajuda você a provisionar ambientes baseados no Amazon EC2. 
+ Em vez de clicar pela console ou escrever vários comandos para criar sua rede, instâncias EC2, escalabilidade
+e os load balances, você vai fornecer o seu código da aplicação com as configurações desejadas no Beanstalk e,
+em seguida, ele cria o seu ambiente e faz o seu deploy. O Elastic Beanstalk também permite salvar as 
+configurações do ambiente para que elas possam ser implantadas novamente. O AWS Elastic Beanstalk fornece a
+conveniência de não ter que provisionar e gerenciar todos esses componentes separadamente e ainda te provê a 
+visibilidade e o controle dos recursos que compõem o seu ambiente. Você irá focar, então, na sua aplicação e 
+não na infraestrutura.
+
+
+O AWS CloudFormation é uma ferramenta que trata a infraestrutura como código, permitindo que você defina uma ampla
+variedade de recursos da AWS usando JSON ou Yaml, chamados de Templates do CloudFormation. Um formato declarativo
+como esse permite definir o que você deseja criar sem especificar o passo a passo exatamente de como fazer essa
+criação. Portanto, o CloudFormation te permite definir o que você deseja e o mecanismo dele vai se preocupar 
+com os detalhes sobre como chamar as APIs para fazer essa criação.    
+
+
+Com o AWS Elastic Beanstalk, você fornece definições de código e configuração, e o Elastic Beanstalk implanta os recursos necessários para executar as seguintes tarefas:
+
+Ajustar capacidade
+Balancear carga
+Dimensionar de forma automática
+Monitorar a integridade do aplicativo
