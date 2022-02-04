@@ -1,0 +1,18 @@
+Armazenamentos de instâncias
+
+Os volumes de armazenamento a nível de bloco se comportam como discos rígidos físicos.
+
+Um armazenamento de instâncias fornece armazenamento temporário a nível de bloco para uma 
+instância do Amazon EC2. Um armazenamento de instância é o armazenamento em disco fisicamente 
+anexo ao computador host para uma instância do EC2 e, portanto, tem a mesma vida útil da instância.
+Quando a instância é encerrada, todos os dados no armazenamento de instâncias são perdidos.
+
+Snapshots do Amazon EBS
+
+Um snapshot do EBS é um backup incremental. Isso significa que o primeiro backup de um volume copia 
+todos os dados. Nos backups subsequentes, somente os blocos de dados que foram alterados desde o 
+snapshot mais recente são salvos. 
+
+Os backups complementares são diferentes dos backups completos, nos quais todos os dados em um 
+volume de armazenamento são copiados cada vez que ocorre um backup. O backup completo inclui dados
+que não foram alterados desde o backup mais recente.
