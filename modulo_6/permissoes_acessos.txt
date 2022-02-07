@@ -1,0 +1,49 @@
+AWS Identity and Access Management (IAM)
+
+Permite que você gerencie o acesso aos serviços e recursos AWS com segurança.
+O IAM oferece a flexibilidade de configurar o acesso com base nas necessidades operacionais e de 
+segurança específicas da sua empresa. Você pode fazer isso usando uma combinação dos recursos do 
+IAM, explorados em detalhes nesta lição:
+
+Usuários, grupos e funções do IAM
+Políticas do IAM
+Autenticação multifator
+
+Usuário-raiz da conta AWS
+
+Ao criar uma conta AWS pela primeira vez, você começa com uma identidade conhecida como usuário-raiz.
+O usuário-raiz é acessado ao entrar com o endereço de e-mail e a senha usados para criar a conta AWS.
+
+
+Não use o usuário-raiz para tarefas cotidianas.
+
+Em vez disso, use o usuário-raiz para criar seu primeiro usuário do IAM e atribua a ele permissões 
+para criar outros usuários.
+
+Em seguida, continue a criar outros usuários do IAM e acesse essas identidades para executar 
+tarefas comuns em toda a AWS. Use o usuário-raiz somente quando precisar executar um número limitado
+de tarefas disponíveis somente para o usuário-raiz. Exemplos dessas tarefas são a alteração do 
+endereço de e-mail do usuário-raiz e a alteração do plano do AWS Support.
+
+
+Usuários do IAM
+
+Um usuário do IAM é uma identidade que você cria na AWS. Ele representa a pessoa ou o aplicativo 
+que interage com os serviços e recursos AWS. Consiste em um nome e credenciais.
+
+Políticas do IAM
+
+Uma políticado IAM é um documento que concede ou nega permissões para serviços e recursos AWS.  
+Siga o princípio de segurança de menor privilégio ao conceder permissões.
+
+Seguindo esse princípio, você ajuda a impedir que usuários ou funções tenham mais permissões do que 
+o necessário para executar as tarefas.
+
+Grupos do IAM
+
+Um grupo do IAM é um conjunto de usuários do IAM. Ao atribuir uma política do IAM a um grupo, 
+todos os usuários do grupo recebem permissões especificadas pela política.
+A atribuição de políticas do IAM no nível de grupo também facilita o ajuste de permissões quando 
+um funcionário é transferido para um trabalho diferente.
+
+Uma função do IAM é uma identidade que você pode assumir para obter acesso temporário a permissões.
