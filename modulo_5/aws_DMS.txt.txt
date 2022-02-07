@@ -1,0 +1,11 @@
+AWS Database Migration Service
+
+
+O AWS Database Migration Service (AWS DMS) permite migrar bancos de dados relacionais e não 
+relacionais e outros tipos de armazenamentos de dados.
+Os bancos de dados de origem e de destino podem ser do mesmo tipo ou de tipos diferentes. 
+Durante a migração, o banco de dados de origem permanece operacional, reduzindo o tempo de inatividade em qualquer aplicativo que dependa do banco de dados. 
+
+**O banco de dados de origem permanece totalmente operacional durante a migração.
+**Minimizando o tempo de inatividade das aplicações que dependem desse banco de dados.
+**Os bancos de dados de origem e destino não precisam ser do mesmo tipo.
