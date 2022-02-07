@@ -1,0 +1,28 @@
+O AWS Key Management Service (AWS KMS) permite que você execute operações de criptografia pelo uso 
+de chaves de criptografia. Uma chave de criptografia é uma cadeia aleatória de dígitos usada para 
+bloquear (criptografar) e desbloquear (descriptografar) dados. Você pode usar o AWS KMS para criar, 
+gerenciar e usar chaves de criptografia. Você também pode controlar o uso de chaves em uma ampla 
+gama de serviços e em seus aplicativos.
+
+O AWS WAF é um firewall de aplicativo web que permite monitorar solicitações de rede que entram em 
+seus aplicativos web. https://aws.amazon.com/pt/waf/
+
+Benefícios
+Proteção ágil contra ataques da web
+Economize tempo com regras gerenciadas
+Melhor visibilidade de tráfego da web
+Facilidade de implantação e manutenção
+Monitore, bloqueie ou limite a taxa de bots com facilidade
+Segurança integrada com o modo como você desenvolve aplicações
+
+Amazon Inspector
+Gerenciamento de vulnerabilidade automatizado e contínuo em escala 
+https://aws.amazon.com/pt/inspector/
+
+O Amazon Inspector é um serviço automatizado de gerenciamento de vulnerabilidade que verifica 
+continuamente as workloads da AWS em busca de
+vulnerabilidades de software e exposição não intencional à rede.
+
+O Amazon GuardDuty é um serviço que fornece detecção inteligente de ameaças para sua 
+infraestrutura e seus recursos AWS. Ele identifica ameaças monitorando continuamente a atividade da
+rede e o comportamento da conta no seu ambiente AWS.
