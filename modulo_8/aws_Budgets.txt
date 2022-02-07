@@ -1,8 +1,0 @@
-No AWS Budgets, você pode criar orçamentos para planejar o uso do serviço, os custos de serviço
-e as reservas de instâncias.
-
-As informações do AWS Budgets são atualizadas três vezes por dia. Isso ajuda você a definir com precisão a proximidade entre seu uso e os 
-valores orçados ou limites de nível gratuito da AWS.
-
-No AWS Budgets, você também pode definir alertas personalizados para quando seu uso exceder (ou 
-estiver prestes a exceder) o valor orçado.
