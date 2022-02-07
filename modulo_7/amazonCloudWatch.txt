@@ -1,0 +1,8 @@
+Amazon CloudWatch
+
+O Amazon CloudWatch é um serviço web que permite monitorar e gerenciar várias métricas e 
+configurar ações de alarme de acordo com os dados dessas métricas.
+Alarmes do CloudWatch
+
+Com o CloudWatch, você pode criar alarmes que executam ações automaticamente se o valor da métrica ultrapassar 
+ou for inferior a um limite predefinido. 
