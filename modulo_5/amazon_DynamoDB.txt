@@ -6,3 +6,12 @@ atributos como sendo diferentes características de seus dados.
 
 O Amazon DynamoDB é um serviço de banco de dados de chave-valor. Ele oferece um desempenho de um
  dígito de milissegundo em qualquer scaling.
+
+
+ Amazon DynamonDB
+
+ Banco de dados NoSQL, não relacional
+ Propósito específico
+ Tempo de resposta de milisegundos
+ Totalmente gerenciado
+ Altamente escalável
