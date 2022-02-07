@@ -1,0 +1,9 @@
+O AWS CloudTrail registra as chamadas de API realizadas na sua conta. As informações gravadas são 
+identidade do chamador da API, hora da chamada da API, endereço IP de origem do chamador da API e
+muito mais. Você pode pensar no CloudTrail como uma “trilha” de migalhas de pão (ou um log de ações)
+que alguém deixou para trás.
+
+CloudTrail Insights
+
+No CloudTrail, você também pode ativar o CloudTrail Insights. Esse recurso opcional permite que o CloudTrail detecte 
+automaticamente atividades de API incomuns em sua conta AWS. 

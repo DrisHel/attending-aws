@@ -1,0 +1,24 @@
+Amazon Virtual Private Cloud (Amazon VPC) = Um serviço de rede que você pode usar para definir limites para seus recursos.
+
+O Amazon VPC permite que você provisione uma seção isolada da nuvem AWS. Nessa seção isolada, 
+você pode executar os recursos em uma rede virtual que definir. Em uma Virtual Private Cloud (VPC),
+você pode organizar seus recursos em sub-redes. Uma sub-rede é uma seção de uma VPC que pode
+conter recursos como instâncias do Amazon EC2.
+
+
+Gateway da internet
+
+Um gateway da internet é uma conexão entre uma VPC e a internet. 
+
+Gateway privado virtual
+
+Para acessar recursos privados em uma VPC, você pode usar um gateway privado virtual. 
+O gateway privado virtual é o componente que permite que o tráfego protegido da internet 
+ingresse na VPC. Mesmo que sua conexão com a cafeteria tenha proteção extra, os engarrafamentos 
+são possíveis porque você usa o mesmo caminho que outros clientes.
+
+
+AWS Direct Connect
+
+É um serviço que permite estabelecer uma conexão privada dedicada entre seu data center e uma VPC.
+A conexão privada que o AWS Direct Connect fornece ajuda você a reduzir os custos de rede e a aumentar a quantidade de largura de banda que pode trafegar pela sua rede.

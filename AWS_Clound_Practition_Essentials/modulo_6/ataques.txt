@@ -1,0 +1,16 @@
+Um ataque de negação de serviço (DoS) é uma tentativa deliberada de tornar um site ou
+aplicativo indisponível para os usuários.
+
+O AWS Shield Standard protege automaticamente todos os clientes AWS sem nenhum custo.
+ Ele protege seus recursos AWS contra os tipos de ataques DDoS mais comuns e frequentes.
+
+À medida que o tráfego de rede ingressa em seus aplicativos, o AWS Shield Standard usa diversas
+técnicas de análise para detectar tráfego mal-intencionado em tempo real e mitigá-lo automaticamente.
+
+
+O AWS Shield Advanced é um serviço pago que fornece diagnósticos detalhados de ataques e a 
+capacidade de detectar e mitigar ataques elaborados de DDoS.
+
+Ele também se integra a outros serviços, como o Amazon CloudFront, o Amazon Route 53 e o Elastic 
+Load Balancing. Além disso, você pode integrar o AWS Shield ao AWS WAF escrevendo regras
+personalizadas para mitigar ataques complexos de DDoS.

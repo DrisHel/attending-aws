@@ -1,0 +1,7 @@
+O AWS Organizations ajuda você a gerenciar e controlar seu ambiente de maneira centralizada à medida
+que os negócios e seus recursos da AWS expandem. Usando o AWS Organizations, você pode criar novas
+contas da AWS e alocar recursos, agrupar contas para organizar seus fluxos de trabalho, aplicar
+políticas a contas ou grupos para governança e simplificar o faturamento usando um único método 
+de pagamento para todas as suas contas.
+Ao criar uma organização, o AWS Organizations cria automaticamente uma raiz, que é o contêiner 
+primário para todas as contas de sua organização. 

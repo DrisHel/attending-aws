@@ -1,0 +1,17 @@
+Bancos de dados não relacionais são às vezes referidos como “bancos de dados NoSQL” porque usam 
+estruturas diferentes de linhas e colunas para organizar dados. Um tipo de abordagem estrutural
+para bancos de dados não relacionais é o uso de pares de chave-valor. Com pares de chave-valor, os
+dados são organizados em itens (chaves) e cada item tem um atributo (valores). Pode-se pensar em 
+atributos como sendo diferentes características de seus dados.
+
+O Amazon DynamoDB é um serviço de banco de dados de chave-valor. Ele oferece um desempenho de um
+ dígito de milissegundo em qualquer scaling.
+
+
+ Amazon DynamonDB
+
+ Banco de dados NoSQL, não relacional
+ Propósito específico
+ Tempo de resposta de milisegundos
+ Totalmente gerenciado
+ Altamente escalável

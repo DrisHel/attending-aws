@@ -1,0 +1,11 @@
+Operar na nuvem AWS oferece muitos benefícios em relação à computação em ambientes locais ou 
+híbridos.
+
+Nesta seção, você aprenderá sobre seis vantagens da computação em nuvem:
+
+Trocar despesa antecipada por despesas variáveis.
+Benefícios de enormes economias de escala.
+Parar de tentar adivinhar a capacidade.
+Aumentar a velocidade e a agilidade.
+Parar de gastar dinheiro com execução e manutenção de data centers.
+Ter alcance global em minutos.

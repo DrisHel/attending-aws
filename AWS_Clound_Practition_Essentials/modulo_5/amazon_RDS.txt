@@ -1,0 +1,24 @@
+Amazon Relational Database Service (Amazon RDS)
+
+Em um banco de dados relacional, os dados são armazenados de forma que se relacionem a outras
+partes de dados.
+Bancos de dados relacionais usam linguagem de consulta estruturada (SQL) para armazenar e consultar
+dados. Essa abordagem permite que os dados sejam armazenados de forma facilmente compreensível,
+consistente e dimensionável. Por exemplo, os proprietários da cafeteria podem escrever uma consulta 
+SQL para identificar todos os clientes que compravam com mais frequência um café com leite médio.
+
+O Amazon Relational Database Service (Amazon RDS) é um serviço que permite executar bancos de 
+dados relacionais na nuvem AWS.
+
+O Amazon RDS é um serviço gerenciado que automatiza tarefas como provisionamento de hardware, 
+configuração de banco de dados, patch e backups. Com esses recursos, você pode passar menos tempo 
+concluindo tarefas administrativas e mais tempo usando dados para inovar seus aplicativos. 
+
+O Amazon RDS está disponível em seis mecanismos de banco de dados, que otimizam memória, desempenho ou entrada/saída (E/S). Os mecanismos de banco de dados compatíveis são:
+
+Amazon Aurora - é um banco de dados relacional de nível empresarial
+PostgreSQL
+MySQL
+MariaDB
+Oracle Database
+Microsoft SQL Server

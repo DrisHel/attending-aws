@@ -1,0 +1,9 @@
+AWS Marketplace
+
+O AWS Marketplace é um catálogo digital com milhares de ofertas de fornecedores independentes
+de software. Você pode usar o AWS Marketplace para encontrar, testar e comprar software que pode ser executado na AWS. 
+
+O AWS Marketplace oferece produtos em várias categorias, como produtos de infraestrutura, aplicativos de negócios, produtos de dados e DevOps.
+
+Em cada categoria, você pode restringir sua pesquisa navegando pelas ofertas de produtos em subcategorias. Por exemplo, as subcategorias na categoria DevOps incluem áreas
+como Desenvolvimento de aplicativos, Monitoramento e Teste.

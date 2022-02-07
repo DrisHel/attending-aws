@@ -1,0 +1,54 @@
+
+****Amazon Simple Storage Service (Amazon S3)é um serviço que fornece armazenamento a nível do objeto.
+O Amazon S3 armazena dados como objetos em buckets.
+
+No armazenamento de objetos, cada objeto consiste em dados, metadados e uma chave.
+
+Os dados podem ser uma imagem, vídeo, documento de texto ou qualquer outro tipo de arquivo.
+Os metadados contêm informações sobre o que são os dados, como eles são usados, o tamanho do objeto
+e assim por diante. A chave de um objeto é seu identificador exclusivo.
+
+****Classes de armazenamento do Amazon S3
+
+Com que frequência você planeja recuperar seus dados
+Seus dados precisam estar muito ou pouco disponíveis
+
+****S3 Standard****
+
+Projetado para dados acessados com frequência;
+Armazena dados em um mínimo de três Zonas de Disponibilidade.
+
+
+****S3 Standart - Infrequent Access (S3 Standard-IA)****
+
+Ideal para dados com pouca frequência de acesso 
+Semelhante ao S3 Standard, mas com um preço de armazenamento mais baixo e um preço de recuperação
+mais alto
+
+
+
+
+****S3 One Zone-Infrequent Access ( S3 One Zone - IA)****
+
+Armazena dados em uma única Zona de Disponibilidade
+Tem um preço de armazenamento menor do que o S3 Standard – IA
+
+
+****S3 Intelligent-Tiering ****
+
+Ideal para dados com padrões de acesso desconhecidos ou em alteração
+Requer uma pequena taxa mensal de monitoramento e automação por objeto
+
+
+****S3 Glacier****
+
+Armazenamento de baixo custo projetado para arquivamento de dados
+Capaz de recuperar objetos em poucos minutos a horas
+
+****S3 Glacier Deep Archive****
+
+Categoria de armazenamento de objetos com menor custo, ideal para arquivamento
+Capaz de recuperar objetos em 12 horas
+
+
+
