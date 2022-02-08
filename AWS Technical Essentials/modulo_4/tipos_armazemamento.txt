@@ -1,0 +1,49 @@
+Os serviços de armazenamento da AWS são agrupados em três categorias: armazenamento de blocos, armazenamento de arquivos e
+armazenamento de objetos.
+
+Armazenamento de arquivo
+------------------------
+
+Os arquivos são organizados em uma hierarquia semelhante a uma árvore que é composta por pastas e subpastas.
+Cada arquivo tem metadados, como nome do arquivo, tamanho do arquivo e a data em que o arquivo foi criado.
+O armazenamento de arquivos é ideal quando você precisa de acesso centralizado a arquivos que precisam ser facilmente compartilhados e gerenciados por vários computadores host. Normalmente, esse armazenamento é montado em vários hosts e requer bloqueio de arquivos e integração com protocolos de comunicação do sistema de arquivos existentes.
+
+Casos de uso comuns para armazenamento de arquivos incluem:
+
+Grandes repositórios de conteúdo
+Ambientes de desenvolvimento
+Diretórios iniciais do usuário
+
+Armazenamento de blocos
+-----------------------
+
+O armazenamento em blocos divide os arquivos em pedaços de dados de tamanho fixo chamados blocos que têm seus próprios endereços.
+Como cada bloco é endereçável, os blocos podem ser recuperados de forma eficiente.
+Como o armazenamento em bloco é otimizado para operações de baixa latência, ele é uma opção de armazenamento típica para workloads
+corporativas de alta performance, como bancos de dados ou sistemas de planejamento de recursos empresariais (ERP), que exigem 
+armazenamento de baixa latência.
+
+
+Armazenamento de objeto
+------------------------
+
+esses objetos são armazenados em uma estrutura plana em vez de uma hierarquia. Cada objeto é um arquivo com um identificador 
+exclusivo. Esse identificador, juntamente com quaisquer metadados adicionais, é empacotado com os dados e armazenado.
+
+Alterar apenas um caractere em um objeto é mais difícil do que com o armazenamento de blocos. Quando você quiser alterar um 
+caractere em um arquivo, todo o arquivo deve ser atualizado.
+Com o armazenamento de objetos, você pode armazenar praticamente qualquer tipo de dados e não há limite para o número de objetos 
+armazenados, o que o torna facilmente escalável. O armazenamento de objetos, geralmente, é útil ao armazenar grandes conjuntos de
+ dados, arquivos não estruturados, como ativos de mídia, e ativos estáticos, como fotos.
+
+
+ Relacionar de volta aos sistemas de armazenamento tradicionais
+
+Se você trabalhou com armazenamento on-premises, talvez já esteja familiarizado com o armazenamento de blocos, arquivos e objetos.
+ Considere as seguintes tecnologias e como elas se relacionam com os sistemas que você pode ter visto antes:
+
+O armazenamento em bloco na nuvem é análogo ao direct-attached storage (DAS) ou a uma rede de storage area network (SAN).
+Os sistemas de armazenamento de arquivos, geralmente, são suportados com um servidor de network attached storage (NAS).
+Adicionar armazenamento em um datacenter tradicional é um processo rígido: as soluções de armazenamento devem ser compradas,
+instaladas e configuradas. Com a computação em nuvem, o processo é mais flexível. Você pode criar, excluir e modificar soluções 
+de armazenamento em questão de minutos.

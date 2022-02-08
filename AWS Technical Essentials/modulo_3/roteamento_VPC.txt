@@ -1,0 +1,21 @@
+Tabela de rotas principal
+
+Quando você cria uma VPC, a AWS cria uma tabela de rotas chamada tabela de rotas principal. Uma tabela de rotas contém um conjunto
+de regras, denominada rotas, que são usadas para determinar o local em que o tráfego de rede é direcionado. A AWS pressupõe que, 
+ao criar uma nova VPC com sub-redes, você deseja que o tráfego flua entre elas. Portanto, a configuração padrão da tabela de rotas
+principal é permitir o tráfego entre todas as sub-redes na rede local.
+
+O destino e o target são duas partes principais desta tabela de rotas.
+
+O destino é um intervalo de endereços IP para o local para o qual você deseja que seu tráfego vá. No exemplo da carta, você 
+precisa de um destino para encaminhar a carta para o local apropriado. O mesmo vale para o roteamento de tráfego. Nesse caso, 
+o destino é o intervalo de IP da rede VPC.
+O destino é a conexão pela qual você deseja enviar o tráfego. Nesse caso, o tráfego é roteado pela rede VPC local.
+
+Tabelas de rotas personalizadas
+
+Embora a tabela de rotas principal seja usada implicitamente por sub-redes que não têm uma associação explícita da tabela
+de rotas, talvez você queira fornecer rotas diferentes por sub-rede, para que o tráfego acesse recursos fora da VPC.
+Se você associar uma tabela de rotas personalizada a uma sub-rede, a sub-rede a usará em vez da tabela de rotas principal.
+Cada tabela de rotas personalizada criada terá a rota local já dentro dela, permitindo que a comunicação flua entre todos os
+recursos e sub-redes na VPC. A rota local não pode ser excluída.

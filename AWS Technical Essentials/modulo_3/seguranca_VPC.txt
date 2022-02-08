@@ -1,0 +1,7 @@
+A Network ACL padrão, permite que todo o tráfego entre e saia da sub-rede. Para permitir que os dados fluam livremente para a 
+sub-rede, esse é um bom ponto de partida.
+As Network ACLs são consideradas stateless, portanto, você precisa incluir as portas de entrada e saída usadas para o protocolo. 
+Se você não incluir o intervalo de saída, seu servidor responderia, mas o tráfego nunca sairia da sub-rede.
+
+Como as Network ACLs são configuradas por padrão para permitir tráfego de entrada e saída, você não precisa alterar as 
+configurações iniciais, a menos que precise de camadas de segurança adicionais.

@@ -1,0 +1,57 @@
+Armazenamento de instância do Amazon EC2
+
+O armazenamento de instância do Amazon EC2 oferece armazenamento temporário no nível de bloco para uma instância. Esse
+armazenamento está localizado em discos que estão anexados fisicamente ao computador host. Isso vincula o ciclo de vida dos
+dados ao ciclo de vida da instância do EC2. Se você excluir a instância, o armazenamento de instâncias também será excluído. 
+Devido a isso, o armazenamento de instâncias é considerado armazenamento temporário. 
+
+O armazenamento de instâncias é ideal se você hospedar aplicações que replicam dados para outras instâncias do EC2, como
+clusters do Hadoop. 
+
+Amazon Elastic Block Storage (Amazon EBS)
+
+Como o nome indica, o Amazon EBS é um dispositivo de armazenamento em nível de bloco que você pode anexar a uma instância do 
+Amazon EC2. Esses dispositivos de armazenamento são chamados de volumes do Amazon EBS. Os volumes do EBS são, essencialmente, 
+unidades de tamanho configurado pelo usuário conectadas a uma instância do EC2, semelhante à conexão de uma unidade externa ao 
+laptop. Os volumes do EBS agem de forma semelhante aos drives externos de mais de uma maneira.
+Escalar volumes do Amazon EBS
+
+Você pode dimensionar volumes do Amazon EBS de duas maneiras.
+
+Aumente o tamanho do volume, desde que ele não ultrapasse o limite máximo de tamanho. Para volumes do EBS, a quantidade máxima de
+ armazenamento que você pode ter é de 16 TB. Se você provisionar um volume do EBS de 5 TB, poderá optar por aumentar o tamanho do
+  volume até chegar a 16 TB.
+Anexe vários volumes a uma única instância do Amazon EC2. O EC2 tem um relacionamento de um para muitos com volumes do EBS. Você
+ pode adicionar esses volumes adicionais durante ou após a criação da instância do EC2 para fornecer mais capacidade de 
+ armazenamento para seus hosts.
+
+ Benefícios do Amazon EBS
+
+Aqui estão os benefícios de usar o Amazon EBS.
+
+Alta disponibilidade: quando você cria um volume do EBS, ele é replicado automaticamente em sua zona de disponibilidade para evitar a perda de dados de pontos únicos de falha.
+Persistência de dados: o armazenamento persiste mesmo quando sua instância não.
+Criptografia de dados: todos os volumes do EBS oferecem suporte a criptografia.
+Flexibilidade: os volumes do EBS oferecem suporte a alterações instantâneas. Você pode modificar o tipo de volume, o tamanho do volume e a capacidade das operações de entrada/saída por segundo (IOPS) sem interromper a instância.
+Backups: o Amazon EBS oferece a capacidade de criar backups de qualquer volume do EBS.
+
+Snapshots do Amazon EBS
+
+Erros acontecem. Um erro é não fazer backup de dados e, em seguida, inevitavelmente perdê-los. Para evitar que isso aconteça 
+com você, sempre faça backup de seus dados, mesmo na AWS.
+
+Como seus volumes do EBS são compostos por dados da instância do Amazon EC2, você deve fazer backups desses volumes, chamados 
+snapshots.
+
+Os snapshots do EBS são backups incrementais que salvam apenas os blocos no volume que foram alterados após o snapshot mais
+ recente. Por exemplo, se você tiver 10 GB de dados em um volume e apenas 2 GB de dados tiverem sido modificados desde o último 
+ snapshot, somente os 2 GB alterados serão gravados no Amazon Simple Storage Service (Amazon S3).
+
+Quando você tira um snapshot de qualquer um dos volumes do EBS, os backups são armazenados de forma redundante em várias zonas
+ de disponibilidade usando o Amazon S3. Esse aspecto do armazenamento do backup no Amazon S3 é tratado pela AWS, portanto, você 
+ não precisará interagir com o Amazon S3 para trabalhar com seus snapshots do EBS. Você os gerencia no console do Amazon EBS, 
+ que faz parte do console do Amazon EC2.
+
+Os snapshots do EBS podem ser usados para criar vários novos volumes, estejam eles na mesma zona de disponibilidade ou em uma 
+diferente. Ao criar um novo volume por meio de um snapshot, ele será uma cópia exata do volume original no momento em que o
+snapshot foi tirado.
