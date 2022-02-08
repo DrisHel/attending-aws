@@ -1,0 +1,57 @@
+Qual é o grande problema de autenticação?
+
+Quando você configura o acesso a qualquer conta, dois termos surgem com frequência: autenticação e autorização. Embora esses 
+termos possam parecer básicos, você deve compreendê-los completamente para configurar corretamente o gerenciamento de acesso na 
+AWS.
+
+Autenticação
+A autenticação garante que o usuário é quem ele diz ser. Nomes de usuário e senhas são os tipos mais comuns de autenticação, mas 
+você também pode trabalhar com outros formulários, como autenticação baseada em token ou dados biométricos, como uma impressão
+digital. A autenticação simplesmente responde à pergunta: “Você é quem você diz ser?”
+
+Credenciais de usuário raiz da AWS
+
+O usuário raiz da AWS tem dois conjuntos de credenciais associados a ele. Um conjunto de credenciais é o endereço de e-mail e a 
+enha usados para criar a conta. Isso permite que você acesse o Console de Gerenciamento da AWS. O segundo conjunto de credenciais
+ é chamado de chaves de acesso, que permitem que você faça solicitações programáticas do AWS Command Line Interface (AWS CLI) ou 
+ da API da AWS.
+
+
+Práticas recomendadas ao trabalhar com o usuário raiz da AWS
+
+O usuário raiz tem acesso total a todos os produtos e recursos da AWS em sua conta, além de suas informações pessoais e de faturamento. Devido a isso, você deve bloquear com segurança as credenciais associadas ao usuário raiz e não usar o usuário raiz para tarefas diárias.
+
+Para garantir a segurança do usuário raiz, siga estas práticas recomendadas:
+
+Escolha uma senha forte para o usuário raiz
+Nunca compartilhe sua senha de usuário raiz ou chaves de acesso com ninguém
+Desativar ou excluir as chaves de acesso associadas ao usuário raiz
+Não use o usuário raiz para tarefas administrativas ou tarefas diárias
+
+
+Exclua suas chaves para ficar seguro
+
+Se você ainda não tem uma chave de acesso para seu usuário raiz da AWS, não crie uma chave a menos que seja realmente necessário. Se você tiver uma chave de acesso para o usuário raiz da sua conta da AWS e quiser excluir as chaves, siga estas etapas:
+
+No Console de Gerenciamento da AWS, acesse a página My Security Credentials (Minhas credenciais de segurança) e faça login com o endereço de e-mail do usuário raiz e a senha.
+Abra a seção Access keys (Chaves de acesso).
+Em Actions (Ações), escolha Delete (Excluir).
+Escolha Yes (Sim).
+
+Multi-factor authentication (MFA)
+
+Quando você cria uma conta da AWS e faz login pela primeira vez na conta, você usa a autenticação de fator único. A autenticação 
+de fator único é a forma mais simples e comum de autenticação. Ele requer apenas um método de autenticação. Nesse caso, você usa 
+um nome de usuário e uma senha para autenticar como usuário raiz da AWS. Outras formas de autenticação de fator único incluem um 
+pin de segurança ou um token de segurança.
+
+
+A MFA precisa de dois ou mais métodos de autenticação para verificar uma identidade. A MFA usa três categorias de informações a
+seguir:
+
+Algo que você sabe, como o nome de usuário e senha, ou número PIN
+Algo que você tem, como uma senha única de um dispositivo de hardware ou aplicação móvel
+Algo que você é, como tecnologia de reconhecimento facial ou biometria
+
+Habilitar a MFA adiciona uma camada adicional de segurança, porque exige que os usuários usem um mecanismo de MFA compatível, além de suas credenciais de login normais.
+ Habilitar o MFA na conta de usuário raiz da AWS é uma prática recomendada da AWS.

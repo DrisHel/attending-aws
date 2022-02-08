@@ -1,0 +1,50 @@
+O código é o código-fonte que descreve o que a função do Lambda deve ser executada. Ele pode ser criado de três maneiras.
+
+Você cria o código do zero.
+Você usa um mapa que a AWS fornece.
+Você usa algum código do AWS Serverless Application Repository, um recurso que contém aplicações de amostra, como código “hello world”, código de exemplo do Amazon Alexa Skill, código de redimensionamento de imagens, codificação de vídeo e muito mais.
+Ao criar sua função do Lambda, você especifica o tempo de execução no qual você deseja que o código seja executado. Você pode usar tempos de execução integrados, como Python, Node.js, Ruby, Go, Java ou .NET Core, ou pode implementar suas funções do Lambda para serem executadas em um tempo de execução personalizado.
+
+A configuração de uma função do Lambda consiste em informações que descrevem como a função deve ser executada. Na configuração, você especifica o posicionamento da rede, variáveis de ambiente, memória, tipo de invocação, conjuntos de permissões e outras configurações. Para aprofundar essas configurações, confira a seção de recursos.
+
+Os acionadores descrevem quando uma função do Lambda deve ser executada. Um acionador integra sua função do Lambda com outros produtos da AWS, permitindo que você execute sua função do Lambda em resposta a determinadas chamadas de API que ocorrem em sua conta da AWS. Isso aumenta sua capacidade de responder a eventos no console sem precisar executar ações manuais. Tudo o que você precisa é o que, como e quando de uma função do Lambda para ter capacidade computacional funcional que é executada somente quando você precisa.
+
+O CTO da Amazon, Werner Vogels, diz: “Nenhum servidor é mais fácil de gerenciar do que nenhum servidor”. Esta citação resume a conveniência que você pode ter ao executar soluções sem servidor, como AWS Fargate e AWS Lambda. Posteriormente, você aplicará todas as informações adquiridas sobre o Amazon EC2, o Amazon ECS, o Amazon EKS e o AWS Fargate a alguns casos de uso para cada serviço.
+
+Handler de função do AWS Lambda
+
+O handler de função do AWS Lambda é o método no código da função que processa eventos. Quando sua função é invocada, o Lambda executa o método do manipulador. Quando o manipulador é encerrado ou retorna uma resposta, ele se torna disponível para lidar com outro evento. 
+
+Você pode usar a seguinte sintaxe geral ao criar um manipulador de funções no Python.
+
+def handler_name(event, context):
+...
+return some_value
+Nomeação
+O nome do manipulador de função do Lambda especificado no momento em que você cria uma função do Lambda é derivado do seguinte:
+
+Nome do arquivo no qual a função de manipulador do Lambda está localizada
+Nome da função do manipulador Python
+Um manipulador de função pode ser qualquer nome; no entanto, o padrão no console do Lambda é lambda_function.lambda_handler. Esse nome reflete o nome da função, como lambda_handler e o arquivo em que o código do manipulador está armazenado em lambda_function.py. Se você escolher um nome diferente para o manipulador de funções no console do Lambda, deverá atualizar o nome no painel Runtime settings (Configurações de tempo de execução).
+
+Granularidade de faturamento
+O AWS Lambda permite que você execute código sem provisionar ou gerenciar servidores, e você paga apenas por aquilo que você usa. Você é cobrado pelo número de vezes que seu código é acionado (solicitações) e pelo tempo que o código é executado, com aproximação de 1 ms (duração) mais próximo.
+
+A AWS aproxima a duração para o milissegundo mais próximo sem tempo mínimo de execução. Com esse preço, pode ser econômico executar funções cujo tempo de execução é muito baixo, como funções com durações abaixo de 100 ms ou APIs de baixa latência. Leia mais aqui: https://aws.amazon.com/blogs/aws/new-for-aws-lambda-1ms-billing-granularity-adds-cost-savings/
+
+Código-fonte
+Você pode encontrar um tutorial sobre a criação da função do AWS Lambda, assim como o código usado na demonstração do AWS Lambda, aqui: https://aws.amazon.com/blogs/compute/resize-images-on-the-fly-with-amazon-s3-aws-lambda-and-amazon-api-gateway/
+
+Notação IPv4
+
+Normalmente, você não vê um endereço IP em seu formato binário. Em vez disso, ele é convertido em formato decimal e anotado como um endereço Ipv4.
+
+No diagrama a seguir, os 32 bits são agrupados em grupos de 8 bits, também chamados de octetos. Cada um desses grupos é convertido em formato decimal separado por um ponto.
+
+No final, isso é chamado de endereço Ipv4. Isso é importante saber ao tentar se comunicar com um único computador. Mas, lembre-se de que você está trabalhando com uma rede. É aqui que entra a notação CIDR.
+
+Notação CIDR
+
+192.168.1.30 é um único endereço IP. Se você quiser expressar endereços IP entre o intervalo de 192.168.1.0 e 192.168.1.255, como você pode fazer isso?
+
+Uma maneira é usar a notação CIDR (Roteamento entre domínios sem classe). A notação CIDR é uma maneira compactada de especificar um intervalo de endereços IP. A especificação de um intervalo determina quantos endereços IP estão disponíveis para você.

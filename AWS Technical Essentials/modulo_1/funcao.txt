@@ -1,0 +1,36 @@
+Bloquear o usuário raiz da AWS
+–
+O usuário raiz é uma identidade eficiente e abrangente em sua conta da AWS. Se um usuário mal-intencionado ganhasse o controle das credenciais de usuário raiz, ele seria capaz de acessar todos os recursos em sua conta, incluindo informações pessoais e de faturamento. Para bloquear o usuário raiz, você pode fazer o seguinte:
+
+Não compartilhe as credenciais associadas ao usuário raiz
+Considere excluir as chaves de acesso do usuário raiz
+Habilitar MFA na conta raiz
+
+Adote o princípio de privilégio mínimo
+–
+O menor privilégio é um princípio de segurança padrão que aconselha você a conceder apenas as permissões necessárias para fazer uma determinada tarefa e nada mais. Para implementar o menor privilégio para controle de acesso, comece com o conjunto mínimo de permissões em uma política do IAM e conceda permissões adicionais conforme necessário para um usuário, grupo ou função.
+
+Usar o IAM adequadamente
+–
+O IAM é usado para proteger o acesso à sua conta e aos recursos da AWS. Ele simplesmente fornece uma maneira de criar e gerenciar usuários, grupos e funções para acessar recursos em uma única conta da AWS. O IAM não é usado para autenticação e autorização de sites, como fornecer aos usuários de um site a funcionalidade de login e inscrição. O IAM também não oferece suporte a controles de segurança para proteger sistemas operacionais e redes.
+
+Usar funções do IAM quando possível
+–
+Manter funções é mais eficiente do que manter usuários. Quando você assume uma função, o IAM fornece dinamicamente credenciais temporárias que expiram após um período definido, entre 15 minutos e 36 horas. Por outro lado, outros usuários têm credenciais de longo prazo na forma de combinações de nome de usuário e senha ou um conjunto de chaves de acesso.
+
+As chaves de acesso do usuário expiram apenas quando você ou o administrador da conta alternam as chaves. As credenciais de login do usuário expiram se você aplicou uma política de senha à sua conta que força os usuários a girar suas senhas.
+
+Considere usar um provedor de identidade
+–
+Se você decidir transformar sua aplicação de fotos de gatos em uma empresa e começar a ter mais do que algumas pessoas trabalhando nele, considere gerenciar informações de identidade de funcionários por meio de um provedor de identidade (IdP). O uso de um IdP, seja um produto da AWS, como o AWS Single Sign-On ou um provedor de identidade de terceiros, fornece uma única fonte de verdade para todas as identidades em sua organização.
+
+Você não precisa mais criar usuários do IAM diferentes na AWS. Em vez disso, você pode usar funções do IAM para fornecer permissões para identidades federadas do IdP. Por exemplo, você tem uma funcionária, chamada Marta, que tem acesso a várias contas da AWS. Em vez de criar e gerenciar vários usuários do IAM chamados Martha em cada uma dessas contas da AWS, você poderia gerenciar Martha no IdP da sua empresa. Se Martha for promovida ou deixar a empresa, o usuário poderá ser atualizado no IdP, em vez de em todas as contas da AWS na empresa.
+
+
+Considere o AWS Single Sign-On
+–
+Se você tiver uma organização que abrange muitos funcionários e várias contas da AWS, talvez queira que seus funcionários façam login com uma única credencial.
+
+O AWS SSO é um IdP que permite que seus usuários façam login em um portal de usuários com um único conjunto de credenciais. Em seguida, ele fornece aos usuários acesso às contas e aplicações atribuídas em um local central.
+
+Semelhante ao IAM. O AWS SSO oferece um diretório em que você pode criar usuários, organizá-los em grupos, definir permissões entre os grupos e conceder acesso a recursos da AWS. No entanto, o AWS SSO tem algumas vantagens em relação ao IAM. Por exemplo, se você estiver usando um IdP de terceiros, poderá sincronizar seus usuários e grupos com o AWS SSO. Assim, não é necessário recriar usuários que já existem em outro lugar e permite que você gerencie os usuários por meio do IdP. Mais importante, o AWS SSO separa os deveres entre o IdP e a AWS, garantindo que o gerenciamento de acesso à nuvem não esteja dentro ou seja dependente do IdP.

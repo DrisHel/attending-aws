@@ -1,0 +1,66 @@
+Tipos de instância do Amazon EC2
+
+As instâncias do Amazon EC2 são uma combinação de processadores virtuais (vCPUs), memória, rede e, em alguns casos,
+armazenamento de instâncias e unidades de processamento gráfico (GPUs). Ao criar uma instância do EC2, você precisa escolher o
+quanto você precisa de cada um desses componentes.
+
+A AWS oferece uma variedade de instâncias que diferem com base na performance. Algumas instâncias oferecem mais capacidade do
+ que outras. Para obter uma visão geral dos detalhes da capacidade de uma instância específica, você deve examinar o tipo de
+ instância
+
+
+Locais de instâncias do EC2
+
+Por padrão, suas instâncias do EC2 são colocadas em uma rede chamada Amazon Virtual Private Cloud (Amazon VPC) padrão. Essa rede 
+foi criada para que você possa começar facilmente a usar o Amazon EC2 sem ter que aprender a criar e configurar uma VPC.
+
+Qualquer recurso que você colocar dentro da VPC padrão será público e acessível pela Internet, portanto, você não deve colocar 
+dados de clientes ou informações privadas nele.
+
+Assim que você estiver mais confortável com a rede na AWS, você deve alterar essa configuração padrão para escolher suas próprias 
+VPCs personalizadas e restringir o acesso com mecanismos adicionais de roteamento e conectividade.
+
+Ao arquitetar qualquer aplicação para alta disponibilidade, considere usar pelo menos duas instâncias do EC2 em duas zonas de
+disponibilidade separadas.
+
+Diferença entre parar e hibernar (stop-hibernate)
+
+Quando você interrompe uma instância, ela entra no estado de parada até atingir o estado interrompido. A AWS não cobra taxas de
+uso ou de transferência de dados para sua instância depois que você a interrompe, mas o armazenamento de qualquer volume do 
+Amazon EBS ainda é cobrado. Enquanto sua instância estiver no estado interrompido, você pode modificar alguns atributos, 
+como o tipo de instância. Quando você interrompe sua instância, os dados armazenados na memória (RAM) são perdidos.
+
+Quando você hiberna uma instância, a AWS sinaliza o sistema operacional para executar a hibernação (suspender para disco), o que
+salva o conteúdo da memória da instância (RAM) no volume raiz do Amazon EBS.
+
+Nesse cenário, o recurso hibernar (stop-hibernate) seria fundamental para o armazenamento persistente. Isso impediria que você tenha 
+que criar scripts manualmente para salvar os dados da RAM antes de desligar o servidor.
+
+Preços
+
+Uma das maneiras de reduzir custos com o Amazon EC2 é escolher a opção de definição de preço certa para a forma como suas 
+aplicações são executadas. A AWS oferece três principais opções de compra para instâncias do EC2: instâncias sob demanda, 
+reservadas e spot.
+
+Capacidade de reserva com instâncias reservadas (RIs)
+
+As RIs fornecem um desconto significativo em comparação aos preços de instâncias sob demanda. As RIs oferecem uma taxa por hora 
+com desconto e uma reserva de capacidade opcional para instâncias do EC2. Você pode escolher entre três opções de pagamento:
+adiantamento integral, adiantamento parcial e sem adiantamento. Você pode selecionar um período de 1 ou 3 anos para cada uma
+dessas opções.
+
+Dependendo de qual opção você escolher, você terá desconto de forma diferente.
+
+Adiantamento integral oferece um desconto maior do que as instâncias de adiantamento parcial.
+As instâncias de adiantamento parcial oferecem um desconto maior do que quando não há adiantamento.
+Sem adiantamento oferece um desconto maior do que sob demanda.
+Sob demanda e sem adiantamento são semelhantes, já que ambos não exigem pagamentos antecipados. No entanto, há uma grande
+diferença. Quando você escolhe uma instância sob demanda, você deixa de pagar pela instância ao interromper ou encerrar a 
+instância. Quando você interrompe uma RI, você ainda paga por ela, porque se comprometeu com um período de um ou três anos.
+
+As instâncias spot do Amazon EC2 permitem aproveitar a capacidade não utilizada do EC2 na Nuvem AWS. Elas estão disponíveis com
+um desconto de até 90% em comparação com os preços sob demanda.
+
+Com as instâncias spot, você define um limite de quanto gostaria de pagar pela hora da instância. Isso é comparado com o preço
+ spot atual que a AWS determina. Se o valor pago for maior do que o preço spot atual e houver capacidade, você receberá uma 
+ instância. Embora sejam muito promissores do ponto de vista do faturamento, você deve explicar algumas considerações arquitetônicas para usá-las de forma eficaz.

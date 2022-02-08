@@ -1,0 +1,68 @@
+AWS Fargate e AWS Lambda são opções de computação sem servidor.
+
+
+Explorar contêineres sem servidor com o AWS Fargate
+
+O Amazon ECS e o Amazon EKS permitem que você execute seus contêineres nos dois modos a seguir:
+
+1 - Amazon EC2
+2 - AWS Fargate
+
+
+O AWS Fargate é um mecanismo de computação sem servidor especialmente desenvolvido para contêineres. O Fargate dimensiona e 
+gerencia a infraestrutura, o que permite que os desenvolvedores trabalhem naquilo que fazem melhor, o desenvolvimento de 
+aplicações. Ele consegue isso com a alocação da quantidade certa de computação, com a eliminação da necessidade de escolher e 
+lidar com instâncias do EC2 e a capacidade de cluster e dimensionamento. O Fargate oferece suporte com a arquitetura Amazon ECS e
+Amazon EKS e fornece isolamento de workload e segurança aprimorada por projeto.
+
+Executar código no AWS Lambda
+
+Se você quiser implantar suas workloads e aplicações sem precisar gerenciar instâncias ou contêineres do EC2, você pode usar o
+ AWS Lambda.
+
+Com o AWS Lambda, você pode executar código sem provisionar ou gerenciar servidores ou contêineres. Você pode executar código 
+para praticamente qualquer tipo de aplicação ou serviço de backend, incluindo processamento de dados, processamento de stream em 
+tempo real, machine learning, WebSockets, backends IoT, back-ends móveis e aplicações Web, como sua aplicação do diretório 
+corporativo!
+
+O AWS Lambda não precisa ser administrado pelo usuário. Você faz upload do seu código-fonte e o Lambda se encarrega de todos os itens necessários para executar e alterar a escala do código com alta disponibilidade. Não há servidores para gerenciar, o que proporciona escalabilidade contínua com medição de subsegundo e performance consistente.
+
+Como o AWS Lambda funciona
+
+Uma função do Lambda tem três componentes principais: acionador, código e configuração.
+O código é o código-fonte que descreve o que a função do Lambda deve ser executada. Ele pode ser criado de três maneiras.
+
+Você cria o código do zero.
+Você usa um mapa que a AWS fornece.
+Você usa algum código do AWS Serverless Application Repository, um recurso que contém aplicações de amostra, como código “hello world”, código de exemplo do Amazon Alexa Skill, código de redimensionamento de imagens, codificação de vídeo e muito mais.
+Ao criar sua função do Lambda, você especifica o tempo de execução no qual você deseja que o código seja executado. Você pode usar tempos de execução integrados, como Python, Node.js, Ruby, Go, Java ou .NET Core, ou pode implementar suas funções do Lambda para serem executadas em um tempo de execução personalizado.
+
+A configuração de uma função do Lambda consiste em informações que descrevem como a função deve ser executada. Na configuração, você especifica o posicionamento da rede, variáveis de ambiente, memória, tipo de invocação, conjuntos de permissões e outras configurações. Para aprofundar essas configurações, confira a seção de recursos.
+
+Os acionadores descrevem quando uma função do Lambda deve ser executada. Um acionador integra sua função do Lambda com outros produtos da AWS, permitindo que você execute sua função do Lambda em resposta a determinadas chamadas de API que ocorrem em sua conta da AWS. Isso aumenta sua capacidade de responder a eventos no console sem precisar executar ações manuais. Tudo o que você precisa é o que, como e quando de uma função do Lambda para ter capacidade computacional funcional que é executada somente quando você precisa.
+
+O CTO da Amazon, Werner Vogels, diz: “Nenhum servidor é mais fácil de gerenciar do que nenhum servidor”. Esta citação resume a conveniência que você pode ter ao executar soluções sem servidor, como AWS Fargate e AWS Lambda. Posteriormente, você aplicará todas as informações adquiridas sobre o Amazon EC2, o Amazon ECS, o Amazon EKS e o AWS Fargate a alguns casos de uso para cada serviço.
+
+Handler de função do AWS Lambda
+
+O handler de função do AWS Lambda é o método no código da função que processa eventos. Quando sua função é invocada, o Lambda executa o método do manipulador. Quando o manipulador é encerrado ou retorna uma resposta, ele se torna disponível para lidar com outro evento. 
+
+Você pode usar a seguinte sintaxe geral ao criar um manipulador de funções no Python.
+
+def handler_name(event, context):
+...
+return some_value
+Nomeação
+O nome do manipulador de função do Lambda especificado no momento em que você cria uma função do Lambda é derivado do seguinte:
+
+Nome do arquivo no qual a função de manipulador do Lambda está localizada
+Nome da função do manipulador Python
+Um manipulador de função pode ser qualquer nome; no entanto, o padrão no console do Lambda é lambda_function.lambda_handler. Esse nome reflete o nome da função, como lambda_handler e o arquivo em que o código do manipulador está armazenado em lambda_function.py. Se você escolher um nome diferente para o manipulador de funções no console do Lambda, deverá atualizar o nome no painel Runtime settings (Configurações de tempo de execução).
+
+Granularidade de faturamento
+O AWS Lambda permite que você execute código sem provisionar ou gerenciar servidores, e você paga apenas por aquilo que você usa. Você é cobrado pelo número de vezes que seu código é acionado (solicitações) e pelo tempo que o código é executado, com aproximação de 1 ms (duração) mais próximo.
+
+A AWS aproxima a duração para o milissegundo mais próximo sem tempo mínimo de execução. Com esse preço, pode ser econômico executar funções cujo tempo de execução é muito baixo, como funções com durações abaixo de 100 ms ou APIs de baixa latência. Leia mais aqui: https://aws.amazon.com/blogs/aws/new-for-aws-lambda-1ms-billing-granularity-adds-cost-savings/
+
+Código-fonte
+Você pode encontrar um tutorial sobre a criação da função do AWS Lambda, assim como o código usado na demonstração do AWS Lambda, aqui: https://aws.amazon.com/blogs/compute/resize-images-on-the-fly-with-amazon-s3-aws-lambda-and-amazon-api-gateway/

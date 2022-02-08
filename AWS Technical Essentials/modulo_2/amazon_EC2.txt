@@ -1,0 +1,53 @@
+O Amazon EC2 é um serviço da Web que disponibiliza capacidade computacional segura e redimensionável na nuvem. Ele permite 
+provisionar servidores virtuais chamados instâncias do EC2. Embora a AWS use a frase “serviço da Web” para descrevê-la, você não 
+está limitado a executar apenas servidores Web em suas instâncias do EC2.
+
+
+Você pode criar e gerenciar instâncias do EC2 por meio do Console de Gerenciamento da AWS, da Interface de Linhas de Comando
+ (CLI) da AWS, dos kits de desenvolvimento de software (SDKs) da AWS, das ferramentas de automação e dos serviços de orquestração
+  de infraestrutura.
+
+Para criar uma instância do EC2, você deve definir o seguinte:
+
+Especificações de hardware, como CPU, memória, rede e armazenamento
+Configurações lógicas, como localização de rede, regras de firewall, autenticação e sistema operacional de sua escolha
+Ao executar uma instância do EC2, a primeira configuração definida é qual sistema operacional você deseja selecionando uma 
+imagem de máquina da Amazon (AMI).
+
+Imagem de máquina da Amazon
+
+No mundo da infraestrutura tradicional, o processo de giro de um servidor consiste em instalar um sistema operacional por meio de
+ discos de instalação, unidades de instalação ou assistentes de instalação pela rede. Na Nuvem AWS, a instalação do sistema 
+ operacional não é de sua responsabilidade. Em vez disso, ele está incorporado à AMI que você escolhe.
+
+Além disso, ao usar uma AMI, você pode selecionar mapeamentos de armazenamento, o tipo de arquitetura (como ARM de 32 bits, 64 
+bits ou 64 bits) e software adicional instalado.
+
+Relação entre AMIs e instâncias do EC2
+
+As instâncias do EC2 são instanciações ao vivo do que é definido em uma AMI, assim como um bolo é uma instanciação ao vivo de uma 
+receita de bolo. Se você estiver familiarizado com o desenvolvimento de software, também poderá ver esse tipo de relacionamento 
+entre uma classe e um objeto.
+
+Uma classe é algo que você modela e define, enquanto um objeto é algo com o qual você interage. Nesse caso, a AMI é como você 
+modela e define sua instância, enquanto a instância do EC2 é a entidade com a qual você interage, o local em que você pode instalar seu servidor Web e veicular seu conteúdo aos usuários.
+
+Quando você executa uma nova instância, a AWS aloca uma máquina virtual que é executada em um hipervisor. Em seguida, a 
+AMI selecionada é copiada para o volume raiz, que contém a imagem usada para inicializar o volume. No final, você obtém um 
+servidor no qual você pode se conectar e instalar pacotes e software adicional. No exemplo, você instala um servidor da Web junto com o código-fonte configurado corretamente da aplicação de diretório de funcionários.
+
+Uma vantagem de usar AMIs é que elas são reutilizáveis. Você pode escolher uma AMI baseada em Linux e configurar o servidor
+ HTTP, pacotes de aplicação e software adicional necessário para executar a aplicação. Se você quiser criar uma segunda instância
+ do EC2 com as mesmas configurações, você pode passar por todo o processo de criação e configuração da instância para corresponder suas configurações à primeira instância. Você também pode criar uma AMI da instância em execução e usar a AMI para iniciar uma nova instância. Dessa forma, sua nova instância teria as mesmas configurações da instância atual, porque as configurações definidas nas AMIs são as mesmas.
+
+Encontre AMIs
+
+Você pode selecionar uma AMI nas seguintes categorias:
+
+AMIs de início rápido, que são criadas pela AWS para ajudar você a começar rapidamente
+AMIs do AWS Marketplace, que fornecem software comercial e de código aberto conceituados de fornecedores terceiros
+Minhas AMIs, que são criadas por meio de suas instâncias do EC2
+AMIs da comunidade fornecidas pela comunidade de usuários da AWS
+Crie sua própria imagem personalizada com o EC2 Image Builder
+
+Cada AMI no Console de Gerenciamento da AWS tem um ID de AMI, que é prefixado por “ami-”, seguido por um hash aleatório de números e letras. Os IDs são exclusivos para cada região da AWS.

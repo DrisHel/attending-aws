@@ -1,0 +1,37 @@
+Amazon VPC
+
+Uma virtual private cloud (VPC) é uma rede isolada que você cria na Nuvem AWS, semelhante a uma rede tradicional em um datacenter. Ao criar uma VPC, você deve escolher três fatores principais:
+
+Nome da VPC.
+Região em que a VPC ficará ativa. Cada VPC abrange várias zonas de disponibilidade dentro da região selecionada.
+Intervalo de IP para a VPC na notação CIDR. Isso determina o tamanho da rede. Cada VPC pode ter até quatro intervalos de IP /16.
+
+Criar uma sub-rede
+
+Depois de criar sua VPC, você deve criar sub-redes dentro da rede.  Na AWS, as sub-redes são usadas para fornecer opções de alta
+disponibilidade e conectividade para seus recursos.
+Ao criar uma sub-rede, você deve especificar o seguinte:
+
+A VPC na qual deseja que sua sub-rede fique ativa. Nesse caso: VPC (10.0.0.0/16)
+Zona de disponibilidade na qual você deseja que sua sub-rede fique ativa. Nesse caso: AZ1
+Bloco CIDR para sua sub-rede, que deve ser um subconjunto do bloco CIDR da VPC. Nesse caso: 10.0.0.0/24
+Quando você executa uma instância do EC2, você a executa dentro de uma sub-rede, que estará localizada dentro da zona de disponibilidade escolhida.
+
+IPs reservados
+
+Para que a AWS configure sua VPC adequadamente, a AWS reserva cinco endereços IP em cada sub-rede. Esses endereços IP são usados 
+para roteamento, Domain Name System (DNS) e gerenciamento de rede.
+
+Gateways
+
+Gateway da Internet
+Para habilitar a conectividade com a Internet para sua VPC, você deve criar um gateway da Internet. Pense no gateway como 
+semelhante a um modem. Assim como um modem conecta seu computador à Internet, o gateway da Internet conecta sua VPC à Internet. 
+Ao contrário de seu modem residencial, que às vezes fica inativo ou offline, um gateway da Internet é altamente disponível e
+ escalável. Depois de criar um gateway da Internet, você o anexa à sua VPC.
+
+Gateway privado virtual
+Um gateway privado virtual conecta sua AWS VPC a outra rede privada. Depois de criar e anexar um gateway privado virtual a uma VPC,
+o gateway atua como âncora no lado da AWS da conexão. Do outro lado da conexão, você precisará conectar um gateway do cliente à 
+outra rede privada. Um dispositivo de gateway do cliente é um dispositivo físico ou aplicação de software no seu lado da conexão.
+Depois de ter os dois gateways, você pode estabelecer uma conexão VPN criptografada entre os dois lados.

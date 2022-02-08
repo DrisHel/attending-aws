@@ -1,0 +1,48 @@
+AWS Identity and Access Management
+
+é um produto da AWS que ajuda você a gerenciar o acesso à sua conta e aos recursos da AWS. Ele também fornece uma visão 
+centralizada de quem e o que tem autorização em sua conta da AWS (autenticação) e quem e o que tem permissão para usar e 
+trabalhar com seus recursos da AWS (autorização).
+
+Recursos do IAM
+
+Para ajudar a controlar o acesso e gerenciar identidades em sua conta da AWS, o IAM oferece muitos recursos para garantir a segurança.
+
+O IAM é global e não é específico para uma região. Você pode ver e usar suas configurações do IAM de qualquer região no Console de
+ Gerenciamento da AWS.
+O IAM é integrado a muitos produtos da AWS por padrão.
+Você pode estabelecer políticas de senha no IAM para especificar requisitos de complexidade e períodos de rotação obrigatórios 
+para os usuários.
+O IAM oferece suporte a MFA.
+O IAM oferece suporte à federação de identidades, que permite que usuários que já têm senhas em outro lugar, por exemplo, em sua 
+rede corporativa ou com um provedor de identidade da Internet, obtenham acesso temporário à sua conta da AWS.
+Qualquer cliente da AWS pode usar o IAM, o serviço é oferecido sem custo adicional.
+Usuário do IAM
+
+Um usuário do IAM representa uma pessoa ou um serviço que interage com a AWS. Você define o usuário em sua conta da AWS. Qualquer
+ atividade feita por esse usuário é cobrada na sua conta. Depois de criar um usuário, esse usuário pode fazer login para obter
+  acesso aos recursos da AWS em sua conta.
+
+
+Credenciais de usuário do IAM
+
+Um usuário do IAM é composto por um nome e um conjunto de credenciais. Ao criar um usuário, você pode fornecer a ele os seguintes tipos de acesso:
+
+Acesso ao Console de Gerenciamento da AWS
+Acesso programático à AWS Command Line Interface (AWS CLI) e interface de programação de aplicações da AWS (API da AWS)
+
+
+Grupos do IAM
+
+Um grupo do IAM é uma coleção de usuários. Todos os usuários em um grupo herdam as permissões atribuídas ao grupo.
+ Isso possibilita dar permissões a vários usuários de uma só vez. Essa é uma maneira mais conveniente e escalável de gerenciar 
+ permissões para usuários em sua conta da AWS. É por isso que usar grupos do IAM é uma prática recomendada.
+
+
+Políticas do IAM
+
+Para gerenciar o acesso e fornecer permissões aos produtos e recursos da AWS, você cria políticas do IAM e as anexa a usuários, 
+grupos e funções do IAM. Sempre que um usuário ou função faz uma solicitação, a AWS avalia as políticas associadas a ele. 
+Por exemplo, se você tiver um desenvolvedor dentro do grupo de desenvolvedores que faz uma solicitação para um produto da AWS, a
+ AWS avaliará todas as políticas anexas ao grupo de desenvolvedores e quaisquer políticas anexas ao usuário desenvolvedor para 
+ determinar se a solicitação deve ser permitida ou negada.

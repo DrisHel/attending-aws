@@ -1,0 +1,28 @@
+Servidores
+
+Para hospedar uma aplicação é preciso um servidor.
+Normalmente, os servidores podem lidar com solicitações de Hypertext Transfer Protocol (HTTP) e enviar respostas aos clientes 
+seguindo o modelo cliente-servidor, embora qualquer comunicação baseada em API também se enquadre nesse modelo. 
+
+Cliente = pessoa ou computador que envia uma solicitação
+Servidor = computador, ou coleção de computadores, conectados à internet que atende sites para usuários da internet.
+
+
+Os servidores alimentam sua aplicação fornecendo capacidade de CPU, memória e rede para processar as solicitações dos usuários e
+transformá-las em respostas. Para contexto, os servidores HTTP comuns incluem:
+
+Opções do Windows, como IIS (Internet Information Services)
+Opções do Linux, como Apache HTTP Web Server, Nginx e Apache Tomcat
+Para executar um servidor HTTP na AWS, você deve encontrar um serviço que forneça poder computacional no Console de Gerenciamento 
+da AWS. Você pode fazer login no console e visualizar a lista completa do AWS Compute Services.
+
+Na AWS, as máquinas virtuais são chamadas de Amazon Elastic Compute Cloud ou Amazon EC2. Nos bastidores, a AWS opera e gerencia 
+as máquinas host e a camada do hipervisor. A AWS também instala o sistema operacional da máquina virtual, chamado sistema
+operacional convidado.
+
+
+Escolha a opção de computação certa
+
+Se você for responsável por configurar servidores na AWS para executar sua infraestrutura, você tem muitas opções de computação.
+Você precisa saber qual serviço usar para qual caso de uso. Em um nível fundamental, três tipos de opções de computação estão
+disponíveis: máquinas virtuais (VMs), serviços de contêiner e sem servidor.

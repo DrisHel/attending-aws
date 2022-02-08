@@ -1,0 +1,27 @@
+Infraestrutura global da AWS
+
+A infraestrutura, como datacenters e conectividade de rede, ainda existe como a base de cada aplicação em nuvem. Na AWS, essa
+infraestrutura física compõe a infraestrutura global da AWS, na forma de regiões e zonas de disponibilidade.
+Cada região da AWS está associada a um nome geográfico e a um código de região.
+
+Aqui estão exemplos de códigos de região:
+
+us-east-1: a primeira região criada na área leste dos EUA. O nome geográfico desta região é o Norte da Virgínia.
+ap-northeast-1: a primeira região criada na região nordeste da Ásia-Pacífico. O nome geográfico desta região é Tóquio.
+
+As regiões da AWS não dependem umas das outras. Os dados não são replicados de uma Região para outra, sem consentimento e
+autorização explícitos do cliente.
+
+Se a aplicação for sensível à latência (o atraso entre uma solicitação de dados e a resposta), escolha uma Região próxima à 
+sua base de usuários. Isso ajuda a evitar longos tempos de espera para seus clientes. 
+
+Devido à economia local e à natureza física dos datacenters operacionais, os preços variam de uma região para outra. Conectividade
+ com a Internet, custos de equipamentos importados, alfândega, imóveis e outros fatores afetam os preços de uma região. Em vez de 
+ cobrar uma taxa fixa em todo o mundo, a AWS cobra com base nos fatores financeiros específicos de cada região.
+ Alguns serviços podem não estar disponíveis em algumas regiões. A documentação da AWS fornece uma tabela que mostra os serviços
+ disponíveis em cada região.
+ Geralmente, as empresas corporativas precisam cumprir as regulamentações que exigem que os dados do cliente sejam armazenados
+ em um território geográfico específico. Se aplicável, escolha uma Região que atenda aos requisitos de conformidade.
+
+
+

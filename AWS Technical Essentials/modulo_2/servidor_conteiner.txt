@@ -1,0 +1,50 @@
+Os contêineres podem hospedar uma variedade de workloads diferentes, incluindo aplicações Web, migrações lift and shift, 
+aplicações distribuídas e simplificação de ambientes de desenvolvimento, teste e produção.
+
+Um contêiner é uma unidade padronizada que empacota seu código e suas dependências. Este pacote foi projetado para ser executado 
+de forma confiável em qualquer plataforma, porque o contêiner cria seu próprio ambiente independente. Com contêineres, 
+as workloads podem ser transportadas de um lugar para outro, como do desenvolvimento à produção ou de on-premises para a nuvem.
+
+O Docker é um tempo de execução de contêiner popular que simplifica o gerenciamento de toda a pilha de sistemas operacionais
+necessária para o isolamento de contêineres, incluindo rede e armazenamento. O Docker ajuda os clientes a criar, empacotar,
+implantar e executar contêineres.
+
+As máquinas virtuais compartilham o mesmo sistema operacional e kernel que o host em que estão, enquanto as máquinas virtuais
+contêm seu sistema operacional. Cada máquina virtual deve manter uma cópia de um sistema operacional, o que resulta em um grau 
+de espaço desperdiçado.
+
+Um contêiner é mais leve. Eles giram mais rápido, quase instantaneamente. Essa diferença no tempo de startup se torna fundamental 
+ao projetar aplicações que precisam ser escaladas rapidamente durante as intermitências de entrada/saída (E/S).
+
+Embora os contêineres possam fornecer velocidade, as máquinas virtuais oferecem toda a força de um sistema operacional e mais 
+recursos, como instalação de pacotes, kernel dedicado e muito mais.
+
+Se você estiver tentando gerenciar sua computação em grande escala, você deve saber o seguinte:
+
+1-Como colocar seus contêineres em suas instâncias
+2-O que acontece se o contêiner falhar
+3-O que acontece se sua instância falhar
+4-Como monitorar implantações de seus contêineres
+
+Essa coordenação é tratada por um serviço de orquestração de contêineres. A AWS oferece dois serviços de orquestração de 
+contêineres: o Amazon Elastic Container Service (ECS) e o Amazon Elastic Kubernetes Service (EKS).
+
+O Amazon ECS é um serviço de orquestração de contêineres completo que ajuda você a criar novos contêineres e gerenciar em
+um cluster de instâncias do EC2.
+
+Quando as instâncias de contêiner do Amazon ECS estiverem ativas e em execução, você poderá executar ações que incluem, entre
+outras, iniciar e interromper contêineres, obter o estado do cluster, aumentar a escala na horizontal e na vertical, agendar o
+posicionamento de contêineres em todo o cluster, atribuir permissões e reunir requisitos de disponibilidade.
+
+Para preparar sua aplicação para ser executada no Amazon ECS, você cria uma definição de tarefa. A definição de tarefa é um 
+arquivo de texto, no formato JSON, que descreve um ou mais contêineres. Uma definição de tarefa é semelhante a um mapa que 
+descreve os recursos necessários para executar um contêiner, como CPU, memória, portas, imagens, armazenamento e informações de
+rede.
+
+Usar o Kubernetes com o Amazon Elastic Kubernetes Service (Amazon EKS)
+
+O Kubernetes é uma plataforma portátil, extensível e de código aberto para gerenciar workloads e serviços em contêineres. 
+
+Usar o Kubernetes com o Amazon Elastic Kubernetes Service (Amazon EKS)
+
+O Kubernetes é uma plataforma portátil, extensível e de código aberto para gerenciar workloads e serviços em contêineres. 

@@ -1,0 +1,19 @@
+Remover trabalho pesado sem diferenciação
+
+Se você executar seu código no Amazon EC2, a AWS é responsável pelo hardware físico e você será responsável pelos controles 
+lógicos, como sistema operacional convidado, segurança e patches, rede, segurança e escalabilidade.
+
+Se você executar seu código em contêineres no Amazon ECS e no Amazon EKS, a AWS é responsável por mais gerenciamento de 
+contêineres, como implantar contêineres em instâncias do EC2 e gerenciar o cluster de contêineres. No entanto, ao executar o 
+ECS e o EKS no EC2, você ainda é responsável por manter as instâncias do EC2 subjacentes.
+
+Se você quiser implantar suas workloads e aplicações sem precisar gerenciar instâncias do EC2, você pode fazer isso na AWS com 
+computação sem servidor.
+
+Remover trabalho pesado sem diferenciação
+
+Se você executar seu código no Amazon EC2, a AWS é responsável pelo hardware físico e você será responsável pelos controles lógicos, como sistema operacional convidado, segurança e patches, rede, segurança e escalabilidade.
+
+Se você executar seu código em contêineres no Amazon ECS e no Amazon EKS, a AWS é responsável por mais gerenciamento de contêineres, como implantar contêineres em instâncias do EC2 e gerenciar o cluster de contêineres. No entanto, ao executar o ECS e o EKS no EC2, você ainda é responsável por manter as instâncias do EC2 subjacentes.
+
+Se você quiser implantar suas workloads e aplicações sem precisar gerenciar instâncias do EC2, você pode fazer isso na AWS com computação sem servidor.

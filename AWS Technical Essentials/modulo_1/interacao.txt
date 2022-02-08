@@ -1,0 +1,19 @@
+Cada ação que você faz na AWS é uma chamada de API autenticada e autorizada. Na AWS, você pode fazer chamadas de API para
+serviços e recursos por meio do Console de Gerenciamento da AWS, da AWS Command Line Interface (AWS CLI) ou de Kits de desenvolvimento de software (SDKs) da AWS.
+
+O Console de Gerenciamento da AWS
+
+Uma maneira de gerenciar recursos de nuvem é por meio do console baseado na Web, em que você faz login e escolhe o serviço desejado. Essa pode ser a maneira mais
+
+fácil de criar e gerenciar recursos quando você começar a trabalhar com a nuvem. 
+
+A AWS CLI é uma ferramenta unificada que você pode usar para gerenciar os produtos da AWS. Você pode fazer download e configurar
+ uma ferramenta que pode ser usada para controlar vários produtos da AWS por meio da linha de comando e automatizá-los com scripts.
+ A AWS CLI é de código aberto e os instaladores estão disponíveis para Windows, Linux e macOS.
+SDKs da AWS
+
+As chamadas de API para a AWS também podem ser executadas executando código com linguagens de programação. Você pode fazer isso
+usando kits de desenvolvimento de software (SDKs) da AWS. Os SDKs são de código aberto e mantidos pela AWS para as linguagens de 
+programação mais populares, como C++, Go, Java, JavaScript, .NET, Node.js, PHP, Python e Ruby.
+
+Geralmente, os desenvolvedores usam os SDKs da AWS para integrar o código-fonte da aplicação aos produtos da AWS. 

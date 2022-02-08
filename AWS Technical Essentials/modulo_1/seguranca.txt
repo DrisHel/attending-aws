@@ -1,0 +1,19 @@
+Quando você trabalha com a Nuvem AWS, gerenciar a segurança e a conformidade é uma responsabilidade compartilhada entre a AWS e
+ você. Para descrever essa responsabilidade compartilhada, a AWS criou o modelo de responsabilidade compartilhada. A distinção de
+ responsabilidade é comumente chamada de segurança DA nuvem versus segurança NA nuvem.
+ Responsabilidade da AWS
+
+
+A AWS é responsável pela segurança da nuvem. Isso significa que a AWS protege e garante a infraestrutura que executa os serviços 
+oferecidos na Nuvem AWS. A AWS é responsável por:
+
+Proteger e garantir regiões, zonas de disponibilidade e datacenters da AWS, até a segurança física dos edifícios
+Gerenciar os componentes de hardware, software e rede que executam os produtos da AWS, como servidores físicos, sistemas 
+operacionais de host, camadas de virtualização e componentes de rede da AWS
+
+Responsabilidade do cliente
+
+Os clientes são responsáveis pela segurança na nuvem. Ao usar qualquer produto da AWS, você é responsável por configurar 
+adequadamente o serviço e suas aplicações, além de garantir que seus dados estejam seguros.
+
+Seu nível de responsabilidade depende do produto da AWS. 
