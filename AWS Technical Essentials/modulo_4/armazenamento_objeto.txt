@@ -1,0 +1,25 @@
+Amazon S3
+
+o Amazon Simple Storage Service (Amazon S3) é uma solução de armazenamento independente que não está vinculada à computação.
+Ele permite que você recupere seus dados de qualquer lugar da Web.
+O Amazon S3 é um serviço de armazenamento de objetos. O armazenamento de objetos armazena dados em uma estrutura plana, usando 
+identificadores exclusivos para procurar objetos quando solicitado. Um objeto é um arquivo combinado com metadados. Você pode
+ armazenar qualquer quantidade desses objetos que desejar. Todas as características do armazenamento de objetos também são 
+características do Amazon S3.
+
+Conceitos do Amazon S3
+
+No Amazon S3, você armazena seus objetos em contêineres chamados buckets. Você não pode fazer upload de objetos, nem mesmo uma
+única foto, para o Amazon S3 sem criar um bucket primeiro. Ao criar um bucket, você especifica, no mínimo, dois detalhes: a 
+região da AWS na qual deseja que o bucket resida e o nome do bucket.
+
+
+Casos de uso do Amazon S3
+-------------------------
+
+Backup e armazenamento: o Amazon S3 é um local natural para fazer backup de arquivos, porque é altamente redundante. Como mencionado na última unidade, a AWS armazena seus snapshots do EBS no S3 para aproveitar sua alta disponibilidade.
+Hospedagem de mídia: como você pode armazenar objetos ilimitados e cada objeto individual pode ter até 5 TBs, o Amazon S3 é o local ideal para hospedar uploads de vídeo, foto e música.
+Entrega de software: Você pode usar o Amazon S3 para hospedar suas aplicações de software que os clientes podem obter por download.
+Data lakes: o AmazonS3 é uma base ideal para um data lake devido à sua escalabilidade praticamente ilimitada. Você pode aumentar o armazenamento de gigabytes para petabytes de conteúdo, pagando apenas pelo que você usa.
+Sites estáticos: você pode configurar o bucket do S3 para hospedar um site estático de HTML, CSS e scripts do lado do cliente.
+Conteúdo estático: devido a escalabilidade sem limites, ao suporte para arquivos grandes e ao fato de você acessar qualquer objeto pela Web a qualquer momento, o Amazon S3 é o lugar perfeito para armazenar conteúdo estático.

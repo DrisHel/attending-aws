@@ -1,0 +1,87 @@
+Como o CloudWatch funciona
+
+Com o CloudWatch, tudo o que você precisa para começar é uma conta da AWS. É um serviço gerenciado que você pode usar para monitoramento, sem gerenciar a infraestrutura subjacente.
+
+A aplicação do Diretório de funcionários é criada com vários produtos da AWS trabalhando juntos como blocos de construção. Monitorar os serviços individuais de forma independente pode ser um desafio. O CloudWatch atua como um local centralizado em que as métricas são coletadas e analisadas. Você já aprendeu como as instâncias do EC2 publicam a utilização da CPU como uma métrica para o CloudWatch. Diferentes recursos da AWS publicam métricas diferentes que você pode monitorar. Você pode ver uma lista de serviços que enviam métricas para o CloudWatch na seção Recursos.
+
+Muitos produtos da AWS enviam métricas automaticamente de forma gratuita para o CloudWatch a uma taxa de um ponto de dados por métrica por intervalo de 5 minutos. Isso oferece visibilidade de seus sistemas sem custo extra. Isso é conhecido como monitoramento básico. Para muitas aplicações, o monitoramento básico é adequado.
+
+Para aplicações em execução em instâncias do EC2, você pode obter mais granularidade publicando métricas a cada minuto, em vez de a cada 5 minutos usando um recurso, como monitoramento detalhado. O monitoramento detalhado incorre em uma taxa. Você pode ler sobre preços na página de preços do CloudWatch vinculada na seção Recursos.
+
+Métricas do CloudWatch
+
+Cada métrica no CloudWatch tem um carimbo de data/hora e é organizada em contêineres chamados namespaces. Métricas em namespaces diferentes são isoladas umas das outras. Você pode pensar nelas como pertencentes a diferentes categorias.
+
+Os produtos da AWS que enviam dados para o CloudWatch anexam dimensões a cada métrica. Uma dimensão é um par de nome/valor que faz parte da identidade de uma métrica. Você pode usar dimensões para filtrar os resultados retornados pelo CloudWatch. Por exemplo, você pode obter estatísticas para uma instância do EC2 ao especificar a dimensão InstanceId quando você pesquisa.
+
+Métricas personalizadas
+
+Suponha que você tenha uma aplicação e queira registrar o número de visualizações de página que seu site recebe. Como você gravaria essa métrica com o CloudWatch? Primeiro, é uma métrica no nível da aplicação. Isso significa que não é algo que a instância do EC2 publicaria no CloudWatch por padrão. É aqui que entram métricas personalizadas. Métricas personalizadas permitem que você publique suas próprias métricas no CloudWatch.
+
+Se você quiser obter uma visibilidade mais granular, você pode usar métricas personalizadas de alta resolução, que permitem coletar métricas personalizadas até uma resolução de 1 segundo. Isso significa que você pode enviar um ponto de dados por segundo por métrica personalizada.
+
+A seguir estão alguns outros exemplos de métricas personalizadas:
+
+Tempos de carregamento de página da Web
+Solicitação de taxas de erro
+Número de processos ou threads em sua instância
+Quantidade de trabalho realizado pela sua aplicação
+Você pode começar a usar métricas personalizadas enviando programaticamente a métrica para o CloudWatch usando a API PutMetricData.
+
+Painéis do CloudWatch
+
+Depois de provisionar seus recursos da AWS e eles estiverem enviando métricas para o CloudWatch, você poderá visualizar e revisar esses dados usando o console do CloudWatch com painéis. Os painéis são páginas iniciais personalizáveis que você usa para visualização de dados de uma ou mais métricas por meio do uso de widgets, como um gráfico ou texto.
+
+Você pode criar muitos painéis personalizados, cada um com foco em uma visão distinta do seu ambiente. Você pode até extrair dados de diferentes regiões em um único painel para criar uma visão global de sua arquitetura.
+
+O CloudWatch agrega estatísticas de acordo com o período de tempo especificado ao criar seu gráfico ou solicitar suas métricas. Você também pode escolher se os widgets de métrica exibirão dados em tempo real. Dados em tempo real são dados publicados no último minuto que não foram totalmente agregados.
+
+Você não está obrigado a usar o CloudWatch exclusivamente para todas as suas necessidades de visualização. Você pode usar ferramentas externas ou personalizadas para ingerir e analisar métricas do CloudWatch usando a API GetMetricData.
+
+No que diz respeito à segurança, você pode controlar quem tem acesso para visualizar ou gerenciar seus painéis do CloudWatch por meio de políticas do AWS Identity and Access Management (IAM) associadas a usuários, grupos ou funções do IAM.
+
+Amazon CloudWatch Logs
+
+O CloudWatch também pode ser o local centralizado para que os logs sejam armazenados e analisados, usando o Amazon CloudWatch Logs. O CloudWatch Logs pode monitorar, armazenar e acessar seus arquivos de log de aplicações que estão em execução em instâncias do Amazon EC2, funções do AWS Lambda e outras fontes.
+
+O CloudWatch Logs permite consultar e filtrar seus dados de log. Por exemplo, suponha que você esteja investigando um erro de lógica da sua aplicação e que você sabe que quando esse erro ocorrer, ele registrará o rastreamento de pilha. Como você sabe que ele registra o erro, você consulta seus logs no CloudWatch Logs para encontrar o rastreamento de pilha. Você também configura filtros de métrica em logs, que transformam dados de log em métricas numéricas do CloudWatch que podem ser gráficas e usadas em seus painéis.
+
+Alguns serviços são configurados para enviar dados de log para o CloudWatch Logs com o mínimo esforço, como o AWS Lambda. Com o AWS Lambda, tudo o que você precisa fazer é dar à função do Lambda as permissões corretas do IAM para publicar logs no CloudWatch Logs. Outros serviços exigem mais configuração. Por exemplo, se você quiser enviar os logs da aplicação de uma instância do EC2 para o CloudWatch Logs, você precisa, primeiramente, instalar e configurar o agente do CloudWatch Logs na instância do EC2.
+
+O agente do CloudWatch Logs permite que as instâncias do Amazon EC2 enviem automaticamente dados de log para o CloudWatch Logs. O agente inclui os seguintes componentes:
+
+Plug-in para a AWS Command Line Interface (AWS CLI) que envia dados de log para o CloudWatch Logs
+Script que inicia o processo para enviar dados para o CloudWatch Logs
+Tarefa cron que garante que o daemon esteja sempre em execução
+Depois que o agente for instalado e configurado, você poderá visualizar os logs de aplicação no CloudWatch Logs.
+
+Terminologia do CloudWatch Logs
+
+Os dados de log enviados para o CloudWatch Logs podem vir de diferentes fontes, por isso, é importante que você entenda como eles são organizados e a terminologia usada para descrever seus logs.
+
+Evento de log: um evento de log é um registro da atividade registrada pela aplicação ou recurso que está sendo monitorado, e tem um carimbo de data/hora e uma mensagem de evento.
+
+Fluxo de log: os eventos de log são agrupados em fluxos de log, que são sequências de eventos de log que pertencem ao mesmo recurso que está sendo monitorado. Por exemplo, os logs de uma instância do EC2 são agrupados em um fluxo de log que você pode filtrar ou consultar insights.
+
+Grupos de log: os fluxos de log são organizados em grupos de log. Um grupo de logs é composto por fluxos de log que compartilham as mesmas configurações de retenção e permissões. Por exemplo, se você tiver várias instâncias do EC2 hospedando sua aplicação e estiver enviando dados de log da aplicação para o CloudWatch Logs, poderá agrupar os fluxos de log de cada instância em um grupo de logs. Isso ajuda a manter seus registros organizados.
+
+Alarmes do CloudWatch
+
+Você pode criar alarmes do CloudWatch para iniciar ações automaticamente com base em mudanças de estado sustentadas de suas métricas. Você configura quando os alarmes são acionados e a ação que é executada.
+
+Primeiro, você deve decidir para qual métrica deseja definir um alarme e, em seguida, definir o threshold que acionará o alarme. Em seguida, você define o período de tempo do threshold. Por exemplo, se você quiser configurar um alarme para que uma instância do EC2 seja acionada quando a utilização da CPU ultrapassar um threshold e de 80%, você também deve especificar o período de tempo em que a utilização da CPU está acima do threshold. O ideal é não acionar um alarme com base em picos temporários curtos na CPU. Você somente deseja acionar um alarme se a CPU estiver elevada por um tempo prolongado. Por exemplo, se a utilização da CPU for superior a 80% por 5 minutos, ou mais, pode haver um problema de recurso. Tendo tudo isso em mente, para configurar um alarme, você precisa escolher a métrica, o threshold e o período de tempo.
+
+Um alarme tem três estados possíveis.
+
+OK:  a métrica está dentro do threshold definido. Tudo parece estar funcionando normalmente.
+ALARM (Alarme): a métrica está fora do threshold definido. Isso pode ser um problema operacional.
+INSUFICIENT_DATA (Dados insuficientes): o alarme acabou de iniciar, a métrica não está disponível ou não há dados suficientes disponíveis para a métrica determinar o estado do alarme.
+Um alarme pode ser acionado quando ele faz a transição de um estado para outro. Depois que um alarme é acionado, ele pode iniciar uma ação. As ações podem ser uma ação do Amazon EC2, uma ação de escalabilidade automática ou uma notificação enviada ao Amazon Simple Notification Service (Amazon SNS).
+
+Prevenir e solucionar problemas com alarmes do CloudWatch
+
+O CloudWatch Logs usa filtros de métrica para transformar os dados de log em métricas com as quais você pode criar gráficos ou definir um alarme. Para a aplicação de diretório de funcionários, suponha que você configure um filtro de métrica para códigos de resposta de 500 erros. Em seguida, você define um alarme para essa métrica que entrará no estado ALARM (Alarme) se as respostas de 500 erros passarem por um determinado valor por um período de tempo sustentado. Se forem mais de cinco respostas de 500 erros por hora, o alarme deve entrar no estado ALARM (Alarme). Em seguida, você define uma ação que deseja que ocorra quando o alarme é acionado. Nesse caso, faz sentido enviar um e-mail ou alerta de texto para que você possa começar a solucionar problemas do site, corrigindo-os antes que eles se tornem um problema maior. Quando o alarme estiver configurado, você se sentirá seguro sabendo que, se o erro ocorrer novamente, você será notificado imediatamente.
+
+Você pode configurar alarmes diferentes por diferentes motivos para ajudá-lo a prevenir ou solucionar problemas operacionais. No cenário descrito, o alarme aciona uma notificação do Amazon SNS que vai para uma pessoa que analisa o problema manualmente. Outra opção é fazer com que os alarmes acionem ações que corrijam automaticamente problemas técnicos.
+
+Por exemplo, você pode configurar um alarme para acionar uma instância do EC2 para reinicializar ou aumentar ou reduzir a escala dos serviços na vertical. Você pode até mesmo configurar um alarme para acionar uma notificação do Amazon SNS que aciona uma função do AWS Lambda. Então, a função do Lambda chama qualquer API da AWS para gerenciar seus recursos e solucionar problemas operacionais. Ao usar os produtos da AWS juntos dessa forma, você pode responder a eventos mais rapidamente.

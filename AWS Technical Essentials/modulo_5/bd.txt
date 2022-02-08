@@ -1,0 +1,31 @@
+Bancos de dados relacionais
+
+Um banco de dados relacional organiza dados em tabelas. Os dados em uma tabela podem ser vinculados a dados em outras tabelas 
+para criar relacionamentos, por isso se usa o termo "relacional".
+
+Uma tabela armazena dados em linhas e colunas. Uma linha, geralmente chamada de registro, contém todas as informações sobre uma 
+entrada específica. As colunas descrevem atributos de uma entrada. Aqui está um exemplo de três tabelas em um banco de dados
+relacional.
+
+Sistema de gerenciamento de banco de dados relacional
+
+Um sistema de gerenciamento de banco de dados relacional (RDBMS) permite criar, atualizar e administrar um banco de dados 
+relacional. Aqui estão alguns exemplos comuns de sistemas de gerenciamento de banco de dados relacionais:
+
+MySQL
+PostgreSQL
+Oracle
+SQL server
+Amazon Aurora
+
+Benefícios de banco de dados relacional
+
+O banco de dados relacional oferece vários benefícios, incluindo os seguintes:
+
+Junções: você pode unir tabelas, permitindo entender melhor os relacionamentos entre seus dados.
+Redundância reduzida: você pode armazenar dados em uma tabela e referenciá-los em outras tabelas em vez de salvar os mesmos dados
+em locais diferentes.
+Familiaridade: os bancos de dados relacionais têm sido uma escolha popular desde a década de 70. Devido a essa popularidade, os
+profissionais técnicos geralmente têm familiaridade e experiência com esse tipo de banco de dados.
+Precisão: os bancos de dados relacionais garantem que seus dados persistam com alta integridade e estejam de acordo com o princípio
+da atomicidade, consistência, isolamento, durabilidade (ACID).

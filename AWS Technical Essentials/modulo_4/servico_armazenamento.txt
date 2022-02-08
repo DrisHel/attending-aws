@@ -1,0 +1,51 @@
+Armazenamento de instância do Amazon EC2
+
+O armazenamento de instâncias é um armazenamento de bloco efêmero. Este é um armazenamento pré-configurado que existe no mesmo servidor físico que hospeda a instância do EC2 e não pode ser separado do Amazon EC2. Você pode pensar nisso como uma unidade interna para sua instância do EC2. 
+
+O armazenamento de instâncias, geralmente, é adequado para armazenamento temporário de informações que estão em constante mudança, como buffers, caches e dados scratch. Não se destina a dados persistentes ou duradouros. Se você precisar de armazenamento de bloco persistente de longo prazo que possa ser separado do Amazon EC2 e que ofereça mais flexibilidade de gerenciamento, como aumento do tamanho do volume ou criação de snapshots, use o Amazon EBS.
+
+Amazon EBS
+
+O Amazon EBS é destinado a dados que mudam com frequência e precisam persistir por meio de paradas de instância, encerramentos ou falhas de hardware. O Amazon EBS tem dois tipos de volumes: volumes com suporte SSD e HDD.
+
+Os volumes com suporte SSD têm as seguintes características:
+
+Performance depende de IOPS (operações de entrada/saída por segundo).
+Ideal para workloads transacionais, como bancos de dados e volumes de inicialização.
+Os volumes com suporte HDD têm as seguintes características:
+
+Performance depende de MB/s.
+Ideal para workloads com intensa taxa de transferência, como big data, data warehouses, processamento de log e E/S de dados sequenciais.
+Aqui estão alguns recursos importantes do Amazon EBS que você precisa saber ao compará-lo com outros serviços.
+
+É armazenamento em bloco.
+Você paga pelo que provisionar (você precisa provisionar armazenamento com antecedência).
+Os volumes do EBS são replicados em vários servidores em uma única zona de disponibilidade.
+A maioria dos volumes do EBS somente pode ser anexa a uma única instância do EC2 por vez.
+Amazon S3
+
+Se seus dados não mudarem com frequência, o Amazon S3 pode ser uma solução de armazenamento econômica e escalável para você. O Amazon S3 é ideal para armazenar conteúdo estático da Web e mídia, backups, arquivamento e dados para análise. Ele também pode hospedar sites estáticos inteiros com nomes de domínio personalizados.
+
+Aqui estão alguns recursos importantes do Amazon S3 para saber ao compará-lo com outros serviços:
+
+É armazenamento de objetos.
+Você paga pelo que usa (você não precisa provisionar armazenamento com antecedência).
+O Amazon S3 replica seus objetos em várias zonas de disponibilidade em uma região.
+O Amazon S3 não está conectado ao armazenamento à computação.
+Amazon Elastic File System (Amazon EFS) e Amazon FSx
+
+Neste módulo, você já aprendeu sobre o Amazon S3 e o Amazon EBS. Você aprendeu que o S3 usa um namespace simples e não deve servir como um sistema de arquivos autônomo. Você também aprendeu que a maioria dos volumes do EBS somente pode ser anexada a uma instância do EC2 por vez. Então, se você precisar do armazenamento de arquivos na AWS, qual serviço você deve usar?
+
+Para armazenamento de arquivos que pode ser montado em várias instâncias do EC2, você pode usar o Amazon Elastic File System (Amazon EFS) ou o Amazon FSx. A tabela a seguir fornece mais informações sobre cada serviço.
+
+Serviço 	Descrição	Perguntas frequentes
+Amazon Elastic File System (Amazon EFS)	Sistema de arquivo NFS totalmente gerenciado	Perguntas frequentes do EFS
+Amazon FSx for Windows File Server	Servidor de arquivo gerenciado totalmente integrado ao Windows Server que oferece suporte ao protocolo SMB	Perguntas frequentes do FSx for Windows File Server
+Amazon FSx for Lustre
+Sistema de arquivo Lustre totalmente gerenciado que se integra ao S3
+Perguntas frequentes do FSx for Lustre
+Aqui estão alguns recursos importantes do Amazon EFS e do Amazon FSx que você deve conhecer ao compará-los com outros serviços:
+
+É um armazenamento de arquivos.
+Você paga pelo que usa (você não precisa provisionar armazenamento com antecedência).
+O Amazon EFS e o Amazon FSx podem ser montados em várias instâncias do EC2.

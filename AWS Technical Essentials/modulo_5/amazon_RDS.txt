@@ -1,0 +1,27 @@
+Amazon RDS
+
+O Amazon Relational Database Service (Amazon RDS) permite que os clientes criem e gerenciem bancos de dados relacionais na nuvem 
+sem a carga operacional do gerenciamento de banco de dados tradicional. Por exemplo, se você vende equipamentos de cuidado com a
+ saúde e seu objetivo é ser o vendedor líder no Noroeste do Pacífico, construir um banco de dados não o ajudará diretamente a 
+ atingir esse objetivo, embora ter um banco de dados seja necessário para atingir o objetivo.
+
+O Amazon RDS descarrega parte do trabalho não relacionado de criar e gerenciar um banco de dados. Você pode se concentrar nas 
+tarefas que diferenciam sua aplicação, em vez de se concentrar em tarefas relacionadas à infraestrutura, como provisionamento, 
+aplicação de patches, escalabilidade e restauração.
+
+O Amazon RDS oferece suporte à maioria dos mais conceituados sistemas de gerenciamento de banco de dados relacionais, variando desde opções comerciais, opções de código aberto e até mesmo uma opção específica da AWS. Os mecanismos suportados do Amazon RDS são:
+
+Comercial: Oracle, SQL Server
+Open Source: MySQL, PostgreSQL, MariaDB
+Nativo da nuvem: Amazon Aurora
+
+Instâncias de banco de dados
+
+Assim como os bancos de dados que você mesmo constrói e gerencia, o Amazon RDS é baseado em computação e armazenamento. A parte
+de computação é chamada de instância de banco de dados, que executa o mecanismo de banco de dados. 
+
+Abaixo da instância de banco de dados há uma instância do EC2. No entanto, essa instância é gerenciada por meio do console do Amazon RDS em vez do console do Amazon EC2. Ao criar sua instância de banco de dados, você escolhe o tipo e o tamanho da instância. O Amazon RDS oferece suporte às três famílias de instâncias a seguir:
+
+Standard (Padrão), que inclui instâncias de uso geral
+Memory Optimized (Memória otimizada), que é otimizada para aplicações que usam muita memória
+Burstable Performance (Performance com capacidade de intermitência), que fornece um nível de performance de linha de base, com a capacidade de intermitência para o uso total da CPU

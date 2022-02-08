@@ -1,0 +1,20 @@
+Introdução ao Amazon DynamoDB
+
+O Amazon DynamoDB é um serviço de banco de dados NoSQL totalmente gerenciado que fornece performance alta e previsível com escalabilidade integrada. O DynamoDB permite que você descarregue os encargos administrativos de operar e dimensionar um banco de dados distribuído para que você não precise se preocupar com provisionamento, definição e configuração de hardware, replicação, aplicação de patches de software ou dimensionamento de cluster.
+
+Com o DynamoDB, você pode criar tabelas de banco de dados que podem armazenar e recuperar qualquer quantidade de dados e atender a qualquer nível de tráfego de solicitação. Também é possível aumentar e reduzir a escala na vertical da capacidade de taxa de transferência das tabelas sem tempo de inatividade ou degradação da performance. Você pode usar o Console de Gerenciamento da AWS para monitorar o uso de recursos e as métricas de performance.
+
+O DynamoDB distribui automaticamente os dados e o tráfego de suas tabelas por um número suficiente de servidores para lidar com seus requisitos de taxa de transferência e de armazenamento, ao mesmo tempo que mantém performance consistente e rápido. Todos os dados são armazenados em discos de estado sólido (SSDs) e são automaticamente replicados entre várias zonas de disponibilidade em uma região da AWS, o que oferece alta durabilidade de dados e disponibilidade integradas.
+
+Componentes principais do Amazon DynamoDB
+
+No DynamoDB, tabelas, itens e atributos são os componentes principais com os quais você trabalha. Uma tabela é uma coleção de itens, e cada item é uma coleção de atributos. O DynamoDB usa chaves primárias para identificar exclusivamente cada item em uma tabela e índices secundários para fornecer mais flexibilidade de consulta.
+
+A seguir são apresentados os componentes básicos do DynamoDB:
+
+Tabelas: semelhante a outros sistemas de banco de dados, o DynamoDB armazena dados em tabelas. Uma tabela é uma coleção de dados. Por exemplo, você pode ter uma tabela chamada Pessoas que você pode usar para armazenar informações pessoais de contato de amigos, familiares ou qualquer outra pessoa de interesse. Você também pode ter uma tabela Carros para armazenar informações sobre veículos que as pessoas dirigem.
+Itens: cada tabela contém zero ou mais itens. Um item é um grupo de atributos que é identificável exclusivamente entre todos os outros itens. Na tabela Pessoas, cada item representa uma pessoa. Na tabela Carros, cada item representa um veículo. Os itens no DynamoDB são semelhantes de muitas formas a linhas, registros ou tuplos em outros sistemas de banco de dados. No DynamoDB, não há limite para o número de itens que você pode armazenar em uma tabela.
+Atributos: cada item é composto por um ou mais atributos. Um atributo é um elemento de dados fundamental, algo que não precisa ser dividido ainda mais. Por exemplo, um item em uma tabela Pessoas pode conter atributos chamados PersonID (ID da pessoa), LastName (Sobrenome), FirstName (Nome), etc. Em uma tabela Department (Departamento), um item pode ter atributos, como DepartmentID (ID do departamento), Name (Nome), Manager (Gerente) etc. Os atributos no DynamoDB se parecem de várias maneiras a campos ou colunas em outros sistemas de banco de dados.
+Segurança do Amazon DynamoDB
+
+Além disso, o DynamoDB oferece criptografia em repouso, o que elimina a carga e a complexidade operacionais envolvidas na proteção de dados confidenciais. Para obter mais informações, leia Criptografia do DynamoDB em repouso.

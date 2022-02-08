@@ -1,0 +1,59 @@
+Objetivo do monitoramento
+
+Ao operar um site, como a aplicação de diretório de funcionários na AWS, você pode ter perguntas como:
+
+Quantas pessoas estão visitando meu site todos os dias?
+Como posso rastrear o número de visitantes ao longo do tempo?
+Como saberei se o site está tendo problemas de desempenho ou disponibilidade?
+O que acontece se minha instância do Amazon Elastic Compute Cloud (EC2) ficar sem capacidade?
+Eu serei alertado se meu site cair?
+Você precisa de uma maneira de coletar e analisar dados sobre a saúde operacional e o uso de seus recursos. O ato de coletar, analisar e usar dados para tomar decisões ou responder perguntas sobre seus recursos e sistemas de TI é chamado de monitoramento.
+
+O monitoramento fornece um pulso quase em tempo real em seu sistema e ajuda a responder às perguntas listadas acima. Você pode usar os dados coletados para observar problemas operacionais causados por eventos, como uso excessivo de recursos, falhas de aplicação, configuração incorreta de recursos ou eventos relacionados à segurança.
+
+Pense nos dados coletados por meio do monitoramento, como saídas do sistema ou métricas.
+
+Use métricas para resolver problemas
+
+Os recursos da AWS que hospedam suas soluções criam várias formas de dados que você pode estar interessado em coletar. Cada ponto de dados individual que um recurso cria é uma métrica. As métricas coletadas e analisadas ao longo do tempo tornam-se estatísticas, como a utilização média da CPU ao longo do tempo, mostrando um pico.
+
+Uma maneira de avaliar a integridade de uma instância do Amazon EC2 é por meio da utilização da CPU. De um modo geral, se uma instância do EC2 tiver uma alta utilização da CPU, isso pode significar um alto número de solicitações. Isso também pode refletir um processo que encontrou um erro e está consumindo muito da CPU. Ao analisar a utilização da CPU, faça um processo que exceda um threshold específico por um período de tempo incomum. Use esse evento anormal, como uma dica para resolver o problema manual ou automaticamente por meio de ações, como a escalabilidade da instância.
+
+Este é um exemplo de uma métrica. Outros exemplos de métricas que as instâncias do EC2 têm são a utilização da rede, a performance do disco, a utilização da memória e os logs criados pelas aplicações em execução no Amazon EC2.
+
+Tipos de métricas
+
+Recursos diferentes na AWS criam diferentes tipos de métricas. Um bucket do Amazon Simple Storage Service (Amazon S3) não teria utilização da CPU, como uma instância do EC2. Em vez disso, o Amazon S3 cria métricas relacionadas aos objetos armazenados em um bucket, como o tamanho geral ou o número de objetos em um bucket. O Amazon S3 também tem métricas relacionadas às solicitações feitas ao bucket, como leitura ou gravação de objetos.
+
+O Amazon Relational Database Service (Amazon RDS) cria métricas, como conexões de banco de dados, utilização de CPU de uma instância ou consumo de espaço em disco. Esta não é uma lista completa para nenhum dos serviços mencionados, mas você pode ver como diferentes recursos criam métricas diferentes.
+
+Você pode estar interessado em uma ampla variedade de métricas, dependendo de seus recursos, objetivos e perguntas.
+
+Benefícios de monitoramento
+
+O monitoramento oferece visibilidade de seus recursos, mas a questão agora é: “Por que isso é importante?” Esta seção descreve alguns dos benefícios do monitoramento.
+
+Responda a problemas operacionais de forma proativa antes que seus usuários finais estejam cientes deles. Aguardar que os usuários finais informem quando a aplicação está sofrendo uma interrupção é uma prática ruim. Por meio do monitoramento, você pode acompanhar métricas como: taxa de resposta a erros e latência de solicitações. Ao longo do tempo, as métricas ajudam a sinalizar quando ocorrerá uma interrupção. Isso permite que você execute ações automaticamente ou manualmente para evitar que a interrupção aconteça e corrija o problema antes que seus usuários finais estejam cientes disso.
+
+Melhore a performance e a confiabilidade de seus recursos. Monitorar os vários recursos que compõem sua aplicação fornece uma visão completa de como sua solução se comporta como um sistema. O monitoramento, se bem feito, pode identificar gargalos e arquiteturas ineficientes. Isso ajuda você a impulsionar a performance e melhorar a confiabilidade.
+
+Reconheça ameaças à segurança e eventos. Quando você monitora recursos, eventos e sistemas ao longo do tempo, você cria o que é chamado de linha de base. Uma linha de base define qual atividade é normal. Usando uma linha de base, você pode detectar anomalias, como picos de tráfego incomuns ou endereços IP incomuns que acessam seus recursos. Quando ocorre uma anomalia, um alerta pode ser enviado ou uma ação pode ser tomada para investigar o evento.
+
+Tome decisões orientadas por dados para seu negócio. O monitoramento observa a integridade operacional da TI e impulsiona decisões de negócios. Por exemplo, suponha que você iniciou um novo recurso para sua aplicação de fotos de gatos e, agora, você quer saber se ele está sendo usado. Você pode coletar métricas no nível da aplicação e visualizar o número de usuários que usam o novo recurso. Com suas descobertas, você pode decidir se deve investir mais tempo para melhorar o novo recurso.
+
+Crie soluções mais econômicas. Por meio do monitoramento, você pode visualizar os recursos que estão sendo subutilizados e dimensionar corretamente seus recursos para seu uso. Isso ajuda você a otimizar o custo e garantir que você não está gastando mais dinheiro do que o necessário.
+
+Visibilidade
+
+Os recursos da AWS criam dados que você pode monitorar por meio de métricas, logs, tráfego de rede, eventos e muito mais. Esses dados são provenientes de componentes que são distribuídos por natureza, o que pode levar à dificuldade em coletar os dados de que você precisa se você não tiver um local centralizado para revisar tudo. A AWS fez isso por você com um serviço chamado Amazon CloudWatch.
+
+O Amazon CloudWatch é um serviço de monitoramento e observabilidade que coleta dados, como os mencionados neste módulo. O CloudWatch fornece insights acionáveis sobre suas aplicações e permite que você responda a mudanças de performance em todo o sistema, otimize o uso de recursos e obtenha uma visão unificada da integridade operacional.
+
+Você pode usar o CloudWatch para:
+
+Detectar comportamento anômalo em seus ambientes
+Definir alarmes para avisar quando algo não estiver certo
+Visualizar logs e métricas com o Console de Gerenciamento da AWS
+Tomar ações automatizadas, como escalabilidade
+Solucionar problemas
+Descobrir insights para manter a integridade das aplicações

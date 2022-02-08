@@ -1,0 +1,37 @@
+Escalabilidade vertical
+
+Se muitas solicitações forem enviadas para um único sistema ativo-passivo, o servidor ativo ficará indisponível e executará o failover para o servidor passivo. Mas isso não resolve nada.
+
+Com ativo-passivo, você precisa de escala vertical. Isso significa aumentar o tamanho do servidor. Com instâncias do EC2, você seleciona um tipo maior ou um tipo de instância diferente. Isso só pode ser feito enquanto a instância estiver em um estado interrompido.
+
+Nesse cenário, ocorrem as seguintes etapas:
+
+Interrupção da instância passiva. Isso não afeta a aplicação, porque ela não está assumindo tráfego.
+Alteração do tamanho ou o tipo da instância e, em seguida, início da instância novamente.
+Mudança do tráfego para a instância passiva, tornando-a ativa.
+Parada, alteração do tamanho e início da instância ativa anterior, pois ambas as instâncias devem corresponder.
+
+ELB com EC2 Auto Scaling
+
+O serviço ELB se integra perfeitamente ao EC2 Auto Scaling. Assim que uma nova instância do EC2 for adicionada ou removida do grupo do EC2 Auto Scaling, o ELB é notificado. No entanto, antes de poder enviar tráfego para uma nova instância do EC2, ele precisa validar se a aplicação em execução na instância do EC2 está disponível.
+
+Essa validação é feita por meio do recurso de verificações de integridade do ELB. O monitoramento é uma parte importante dos balanceadores de carga, porque eles devem rotear o tráfego apenas para instâncias íntegras do EC2. É por isso que o ELB suporta dois tipos de verificações de integridade.
+
+Estabelecimento de uma conexão com uma instância do EC2 de back-end com uso do TCP e marcação da instância como disponível se a conexão for bem-sucedida.
+Fazer uma solicitação HTTP ou HTTPS para uma página da Web especificada e validar se um código de resposta HTTP é retornado.
+
+Amazon EC2 Auto Scaling
+
+O serviço Amazon EC2 Auto Scaling adiciona e remove capacidade para manter uma performance estável e previsível com o menor custo possível. Ao ajustar a capacidade exatamente ao que sua aplicação usa, você paga apenas por aquilo que sua aplicação precisa. E, mesmo com aplicações que têm uso constante, o EC2 Auto Scaling pode ajudar no gerenciamento de frotas. Se uma instância do EC2 tiver um problema, o EC2 Auto Scaling poderá substituir automaticamente a instância. Isso significa que o EC2 Auto Scaling ajuda tanto a escalar sua infraestrutura quanto a garantir alta disponibilidade.
+
+Grupos do EC2 Auto Scaling
+
+O próximo componente que o EC2 Auto Scaling precisa é de um grupo do EC2 Auto Scaling. Um grupo do Auto Scaling ajuda você a definir o local em que o EC2 Auto Scaling implanta seus recursos. É aqui que você especifica a Amazon VPC e as sub-redes em que a instância do EC2 deve ser executada. O EC2 Auto Scaling cuida da criação das instâncias do EC2 nas sub-redes, portanto, selecione pelo menos duas sub-redes que estejam em diferentes zonas de disponibilidade.
+
+Com os grupos do Auto Scaling, você pode especificar o tipo de compra para as instâncias do EC2. Você pode usar somente sob demanda, somente spot ou uma combinação dos dois, o que permite que você aproveite as instâncias spot com o mínimo de sobrecarga administrativa.
+
+Para especificar quantas instâncias o EC2 Auto Scaling deve iniciar, você tem três configurações de capacidade a serem definidas para o tamanho do grupo.
+
+Mínimo: o número mínimo de instâncias em execução no grupo do Auto Scaling, mesmo que o threshold para diminuir a quantidade de instâncias seja atingido.
+Máximo: o número máximo de instâncias em execução no grupo do Auto Scaling, mesmo que o threshold para adicionar novas instâncias seja atingido.
+Capacidade desejada: a quantidade de instâncias que devem estar em seu grupo do Auto Scaling. Esse número somente pode estar no intervalo ou ser igual ao número mínimo ou máximo. O EC2 Auto Scaling adiciona ou remove instâncias automaticamente para corresponder ao número de capacidade desejado.

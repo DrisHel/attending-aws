@@ -1,0 +1,70 @@
+Balanceadores de carga
+
+O balanceamento de carga se refere ao processo de distribuição de tarefas em um conjunto de recursos. No caso da aplicação de diretório de funcionários, os recursos são instâncias do EC2 que hospedam a aplicação e as tarefas são as solicitações que estão sendo enviadas. Você pode usar um balanceador de carga para distribuir as solicitações em todos os servidores que hospedam a aplicação.
+
+Para fazer isso, primeiramente, você precisa habilitar o balanceador de carga para pegar todo o tráfego e redirecioná-lo para os servidores de back-end com base em um algoritmo. O algoritmo mais popular é o round-robin, que envia o tráfego para cada servidor um após o outro.
+
+Uma solicitação típica de uma aplicação começa por meio do navegador de um cliente. A solicitação é enviada para um balanceador de carga. Em seguida, ele é enviado para uma das instâncias do EC2 que hospeda a aplicação. O tráfego de retorno volta pelo balanceador de carga e volta ao navegador do cliente. Como você pode ver, o balanceador de carga está diretamente no caminho do tráfego.
+
+Embora seja possível instalar sua própria solução de balanceamento de carga de software em instâncias do EC2, a AWS fornece um serviço chamado Elastic Load Balancing.
+
+Recursos do ELB
+
+O serviço ELB oferece uma grande vantagem em relação ao uso de sua própria solução para fazer balanceamento de carga: você não precisa gerenciá-lo ou operá-lo. Ele pode distribuir o tráfego da aplicação de entrada entre instâncias do EC2, contêineres, endereços IP e funções do AWS Lambda. Outros recursos principais incluem o seguinte:
+
+Como o ELB pode balancear a carga para endereços IP, ele pode funcionar em um modo híbrido, o que significa que ele também faz o balanceamento de carga para servidores on-premises.
+O ELB é altamente disponível. Deve-se apenas garantir que o balanceador de carga seja implantado em várias zonas de disponibilidade.
+Em termos de escalabilidade, o ELB é dimensionado automaticamente para atender à demanda do tráfego de entrada. Ele lida com o tráfego de entrada e o envia para a aplicação de back-end.
+Verificações de integridade
+
+É fundamental separar um momento para definir uma verificação de integridade apropriada. Apenas verificar que a porta de uma aplicação está aberta não significa que a aplicação está funcionando. Isso também não significa que simplesmente fazer uma chamada para a página inicial de uma aplicação também seja o caminho certo.
+Componentes ELB
+
+O serviço ELB é composto por três componentes principais.Escolha os marcadores de imagem para saber mais sobre regras, listeners e grupos de destino.
+Application Load Balancer
+
+Aqui estão alguns recursos principais do Application Load Balancer.
+
+O ALB roteia o tráfego com base nos dados da solicitação. O ALB toma decisões de roteamento com base no protocolo HTTP, como o caminho do URL (/upload) e host, cabeçalhos e método HTTP, além do endereço IP de origem do cliente. Isso permite o roteamento granular para grupos de destino.
+
+O ALB envia respostas diretamente ao cliente. O ALB tem a capacidade de responder diretamente ao cliente com uma resposta fixa, como uma página HTML personalizada. Ele também pode enviar um redirecionamento para o cliente, o que é útil quando você deve redirecionar para um site específico ou redirecionar uma solicitação de HTTP para HTTPS, removendo esse trabalho de seus servidores de back-end.
+
+O ALB usa o descarregamento TLS. Falando em HTTPS e salvando trabalho de servidores de back-end, o ALB entende o tráfego HTTPS. Para passar o tráfego HTTPS por meio do ALB, um certificado SSL é fornecido pela importação de um certificado por meio de serviços do IAM ou do AWS Certificate Manager (ACM) ou pela criação de um de forma gratuita usando o ACM. Isso garante que o tráfego entre o cliente e o ALB seja criptografado.
+
+O ALB autentica usuários. Sobre o tópico de segurança, o ALB pode autenticar usuários antes que eles possam passar pelo balanceador de carga. O ALB usa o protocolo OpenID Connect e se integra a outros produtos da AWS para oferecer suporte a protocolos, como SAML, LDAP, Microsoft Active Directory e muito mais.
+
+O ALB protege o tráfego. Para evitar que o tráfego atinja o balanceador de carga, configure um grupo de segurança para especificar os intervalos de endereços IP suportados.
+
+O ALB usa o algoritmo de roteamento round-robin. O ALB garante que cada servidor receba o mesmo número de solicitações em geral. Esse tipo de roteamento funciona para a maioria das aplicações.
+
+O ALB usa o algoritmo de roteamento de solicitações menos pendente. Se as solicitações para o back-end variarem em complexidade, em que uma solicitação pode precisar de muito mais tempo de CPU do que outra, o algoritmo de solicitação menos pendente será mais apropriado. Também é o algoritmo de roteamento certo para usar se os destinos variarem nos recursos de processamento. Uma solicitação pendente é quando uma solicitação é enviada para o servidor de back-end e ainda não recebeu uma resposta.
+
+Por exemplo, se as instâncias do EC2 em um grupo de destino não tiverem o mesmo tamanho, a utilização da CPU de um servidor será maior que a outra se o mesmo número de solicitações for enviado para cada servidor usando o algoritmo de roteamento round-robin. Esse mesmo servidor também terá solicitações mais pendentes. Usar o algoritmo de roteamento de solicitações menos pendente garantiria um uso igual entre os destinos.
+
+O ALB usa sticky sessions. Se as solicitações precisarem ser enviadas para o mesmo servidor de back-end, porque a aplicação é com estado, use o recurso de sticky session. Esse recurso usa um cookie HTTP para se lembrar, entre conexões, para qual servidor enviar o tráfego.
+
+Por fim, o ALB é especificamente para tráfego HTTP e HTTPS. Se sua aplicação usar um protocolo diferente, considere o Network Load Balancer.
+
+Network Load Balancer
+
+Aqui estão alguns recursos primários do balanceador de carga da rede.
+
+O Network Load Balancer oferece suporte a protocolos TCP, UDP e TLS. O HTTPS usa TCP e TLS como protocolos. No entanto, o NLB opera na camada de conexão, portanto, ele não entende o que é uma solicitação HTTPS. Isso significa que todos os recursos necessários para entender o protocolo HTTP e HTTPS, como regras de roteamento baseadas nesse protocolo, autenticação e algoritmo de roteamento de solicitações menos pendentes, não estão disponíveis com o NLB.
+
+O NLB usa um algoritmo de roteamento hash de fluxo. O algoritmo é baseado em:
+
+Protocolo
+Endereço de IP de origem e porta de origem
+Endereço de IP de destino e porta de destino
+Número de sequência TCP
+Se todos os parâmetros são os mesmo, os pacotes são enviados para o mesmo destino. Se algum deles for diferente nos próximos pacotes, a solicitação poderá ser enviada para um destino diferente.
+
+O NLB tem sticky sessions. Diferente do ALB, essas sessões são baseadas no endereço IP de origem do cliente, em vez de um cookie.
+
+O NLB oferece suporte ao descarregamento TLS. O NLB entende o protocolo TLS. Ele também pode descarregar o TLS dos servidores de back-end, semelhante a como o ALB funciona.
+
+O NLB lida com milhões de solicitações por segundo. Embora o ALB também possa suportar esse número de solicitações, ele precisa ser escalado para atingir esse número. Isso leva tempo. O NLB pode lidar instantaneamente com milhões de solicitações por segundo.
+
+O NLB oferece suporte a endereços IP estáticos e elásticos. Em algumas situações, um cliente de aplicação precisa enviar solicitações diretamente para o endereço IP do balanceador de carga em vez de usar o DNS. Por exemplo, isso é útil se a aplicação não puder usar DNS ou se os clientes de conexão precisarem de regras de firewall com base em endereços IP. Nesse caso, o NLB é o tipo certo de balanceador de carga a ser usado.
+
+O NLP preserva o endereço IP de origem. O NLB preserva o endereço IP de origem do cliente ao enviar o tráfego para o back-end. Com o ALB, se você observar o endereço IP de origem das solicitações, encontrará o endereço IP do balanceador de carga. Enquanto estiver com o NLB, você veria o endereço IP real do cliente, que é exigido pela aplicação de back-end em alguns casos.

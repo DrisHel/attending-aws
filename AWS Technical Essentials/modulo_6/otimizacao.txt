@@ -1,0 +1,16 @@
+Disponibilidade
+
+A disponibilidade de um sistema, geralmente, é expressa como uma porcentagem do tempo de atividade em um determinado ano ou como um número de noves. Na tabela, você pode ver uma lista das porcentagens de disponibilidade com base no tempo de inatividade por ano, bem como sua notação em noves. 
+Melhorar a disponibilidade das aplicações
+
+Na aplicação atual, uma instância do EC2 hospeda a aplicação, as fotos são veiculadas pelo Amazon Simple Storage Service (Amazon S3) e os dados estruturados são armazenados no Amazon DynamoDB. Essa única instância do EC2 é um único ponto de falha para a aplicação.
+Segunda zona de disponibilidade
+
+A localização física de um servidor é importante. Além de possíveis problemas de software no nível do sistema operacional ou da aplicação, problemas de hardware devem ser considerados. Pode estar no servidor físico, no rack, no datacenter ou até mesmo na zona de disponibilidade que hospeda a máquina virtual. Para corrigir o problema de localização física, você pode implantar uma segunda instância do EC2 em uma zona de disponibilidade diferente. E, a nova instância também pode resolver problemas com o sistema operacional e a aplicação. No entanto, ter mais de uma instância traz novos desafios.
+Replicação, redirecionamento e alta disponibilidade
+
+Processo de replicação
+O primeiro desafio com várias instâncias do EC2 é que você precisa criar um processo para replicar os arquivos de configuração, patches de software e aplicações entre instâncias. O melhor método é automatizar o máximo possível.
+
+Redirecionamento do cliente
+O segundo desafio é como permitir que os clientes (os computadores que enviam solicitações para seu servidor) saibam sobre os diferentes servidores. Várias ferramentas podem ser usadas aqui. O mais comum é usar um Domain Name System (DNS) em que o cliente usa um registro que aponta para o endereço IP de todos os servidores disponíveis. No entanto, o tempo que leva para atualizar a lista de endereços IP e para que os clientes tenham conhecimento dessa mudança, às vezes, chamada de propagação. Isso, geralmente, é a razão pela qual esse método nem sempre é usado.
