@@ -1,0 +1,67 @@
+ Uma fonte de eventos é a entidade que publica eventos e uma função do Lambda é o código personalizado que processa os eventos. 
+
+você configura as fontes de eventos que acionam cada uma das funções do Lambda e usa o IAM para conceder à fonte de eventos o acesso à função do Lambda. Esta configuração de serviços como trigger de eventos é referida como mapeamento de fonte de eventos. Existem várias opções para acionar uma função do Lambda, e você tem bastante flexibilidade para criar fontes de eventos personalizadas para atender às suas necessidades específicas. Aqui, vamos nos concentrar nos serviços da AWS que podem ser usados como fontes de eventos. Geralmente, você pode categorizá-los por fonte de eventos. 
+
+
+
+Um tipo de fonte de eventos é um armazenamento de dados. Se você quer monitorar as alterações em dados que ele armazena, é uma fonte de eventos em potencial. Por exemplo, o Amazon S3, o Amazon DynamoDB e o Amazon Kinesis Data Streams são armazenamentos de dados. Você pode usar qualquer um deles para acionar uma função do Lambda. 
+
+
+
+Outro tipo de fonte de eventos é um endpoint. Esses são os serviços da AWS que emitem eventos e invocam o Lambda. Por exemplo, quando você pede para a Alexa fazer algo, ela está emitindo um evento que acionará uma função do Lambda. 
+
+
+
+Os repositórios também são fontes de eventos. Os repositórios mantêm informações e podem acionar o Lambda quando ocorrem determinadas ações, como acionar uma função do Lambda com base em uma ação específica registrada no Amazon CloudWatch. Ou acionando automaticamente o processo de compilação de CI/CD quando você confirma o código no repositório do AWS CodeCommit. 
+
+
+
+O último tipo de fonte de eventos são os serviços de mensagem. Por exemplo, algo que está sendo publicado em um tópico do Amazon SNS pode acionar uma função do Lambda. 
+
+
+
+Agora vamos dar uma olhada em como essas várias fontes de eventos acionam uma função. Cada uma das fontes de eventos que 
+acabamos de mencionar invocará o Lambda em um desses modelos de execução:
+
+Push síncrono
+Push assíncrono 
+Sondagem baseada em streaming 
+E sondagem não baseada em streaming. 
+
+Lambda Destinations. Esse recurso permite rotear o resultado de uma invocação assíncrona para um serviço da AWS sem escrever 
+código.
+
+Você pode escolher entre quatro opções de destino:
+
+outra função do Lambda,
+uma fila SQS,
+um tópico SNS
+ou Amazon EventBridge.
+Para cada status de execução (onSuccess e onFailure), você pode selecionar um destino.
+
+Para obter mais informações sobre como usar destinos para gerenciar falhas, visite o guia do desenvolvedor do Lambda, página 
+Recursos.
+
+
+
+Para chamar sua função de forma assíncrona por meio de uma chamada de API, use o tipo de invocação da API de evento. Alguns 
+eventos de push síncronos incluem API Gateway, AWS CloudFormation e Alexa. E o Amazon S3, o Amazon SNS e o CloudWatch são exemplos
+de fontes de eventos que invocam o Lambda de forma assíncrona. Como você pode ver, a maioria das fontes de eventos acontece por
+meio do modelo de execução síncrono ou assíncrono.
+
+Fontes de eventos
+
+Muitos serviços podem ser fontes de eventos
+
+Uma fonte de eventos é a entidade que publica eventos e uma função do Lambda é o código personalizado que processa os eventos. 
+A configuração dos serviços como triggers de eventos é referida como mapeamento de fonte de eventos. 
+Stream em comparação com fila
+
+Um ponto a considerar é que, com sondagem baseada em streaming, não há custo para fazer as chamadas de sondagem, mas com a sondagem SQS, 
+as taxas SQS padrão se aplicam a cada solicitação. Além disso, há uma distinção fundamental entre como os erros são tratados:
+
+
+A - O Amazon S3 aciona o Lambda por meio de um push assíncrono
+B - O Amazon API Gateway aciona o Lambda de forma síncrona
+E - Se o Lambda não conseguir chamar uma função acionada por uma mensagem em
+ uma fila SQS, a chamada com falha irá para a DLQ (se uma estiver configurada).

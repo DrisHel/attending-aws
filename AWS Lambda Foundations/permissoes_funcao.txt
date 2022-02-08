@@ -1,0 +1,26 @@
+O AWS Lambda é o serviço de computação para arquitetura serverless
+Quais são os recursos do Lambda compatíveis com o Desenvolvimento Serverless?
+
+A - Permite que você execute código sem provisionar ou gerenciar servidores
+B - Dispara em seu nome em resposta a eventos
+D - Dimensiona automaticamente
+E - Fornece monitoramento integrado e registro em log
+
+Quais entidades do IAM devem ser incluídas em uma função de execução para que uma função do Lambda interaja com outros serviços? 
+
+1 - Política do IAM que define as ações que podem ser executadas
+
+2 - Política de confiança que concede a permissão “AssumeRole” ao Lambda
+
+Acesso a recursos em uma VPC
+
+Para habilitar sua função do Lambda para acessar recursos dentro de sua Virtual Private Cloud (VPC), é necessário fornecer 
+informações de configuração adicionais específicas da VPC, que inclui IDs de sub-rede da VPC e IDs de grupos de segurança.
+Você também precisa incluir uma função de execução com permissões para criar, descrever e excluir interfaces de rede elásticas.
+O Lambda fornece uma política de permissões chamada AWSLambdaVPCAccessExecutionRole para esse fim.
+
+Qual delas descreve uma política de recursos? Selecione todas as opções aplicáveis. 
+Pode dar permissão ao Amazon S3 para acionar uma função do Lambda
+Pode conceder acesso à função do Lambda em contas da AWS
+Determina quem tem permissão para entrar
+

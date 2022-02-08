@@ -1,0 +1,39 @@
+Usar o SAM como estrutura de trabalho da aplicação serverless
+
+Há uma série de estruturas serverless disponíveis. Encontre uma estrutura que funcione com sua cadeia de ferramentas de 
+desenvolvedor e minimize o trabalho para especificar os detalhes do seu ambiente de execução. Para nossos exemplos, veremos o 
+SAM.
+
+A CLI do SAM ajuda você a testar e implantar
+
+A CLI do SAM inicia um contêiner Docker com o qual você pode interagir para testar e depurar suas funções do Lambda. É importante 
+notar que, mesmo com uma ferramenta como a CLI do SAM, os testes locais abrangerão apenas um subconjunto do que precisa ser 
+testado antes que o código entre em sua aplicação de produção.
+
+LI do SAM para testar
+
+Invocar funções e executar testes localmente.
+Gerar exemplos de payloads de fonte de eventos.
+Executar o API Gateway localmente.
+Depurar o código.
+Revisar os logs de funções do Lambda.
+Validar modelos do SAM.
+
+CLI DO SAM
+
+Você pode instalar a CLI SAM localmente para ajudar a testar seus aplicações serverless, validar seus modelos de SAM e simplificar suas implantações.
+
+Veja alguns comandos importantes da CLI do SAM a seguir. Você pode encontrar todos os detalhes sobre o SAM e a CLI do SAM no github.
+
+interagirlocal
+validate
+package
+implantar
+
+
+Automatizar implantações seguras com o AWS CodeDeploy
+
+O Lambda é integrado ao CodeDeploy para implantação automatizada com mudança de tráfego.
+
+Canário: o tráfego é deslocado em dois incrementos: X% primeiro, permanecendo após Y minutos.
+Linear: o tráfego é deslocado em incrementos iguais de X com minutos Y entre cada incremento.

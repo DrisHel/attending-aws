@@ -1,0 +1,37 @@
+O CloudWatch fornece sete métricas prontas para uso para funções do Lambda a fim de ajudar você a identificar em alto nível a
+performance das suas funções, os erros gerados e a integridade geral da sua aplicação. As métricas de invocações, erros, duração 
+e aceleração estão disponíveis diretamente no painel do console de gerenciamento do Lambda. IteratorAge pode ser uma métrica 
+importante se você estiver usando invocações baseadas em streaming, e ConcurrentExecutions e UnreservedConcurrentExecutions 
+podem fornecer informações valiosas sobre como suas funções estão usando os limites de simultaneidade que você definiu. 
+
+Monitorar com o CloudWatch
+
+O CloudWatch fornece sete métricas fora da caixa para o Lambda:
+
+invocações
+Erros
+duração
+Limitações
+IteratorAgeConcurrentExecutions
+UnreservedConcurrentExecutions
+
+Rastreia o caminho e o tempo de uma invocação para localizar gargalos e falhas
+
+Uso para ajuste de performance
+Identificar fluxo de chamadas de funções e chamadas de API do Lambda
+Você pode executar o X-Ray imediatamente, e isso lhe dará uma visão de alto nível das suas funções, mas você também pode instrumentar seu código para rastrear chamadas de API
+ individuais. (Há um exemplo de rastreamentos do X-Ray na seção Ciclo de vida do Lambda).
+
+ Registra chamadas de API feitas por ou em nome de uma função
+
+Auditar ações realizadas em relação à aplicação
+Integrar com regras do CloudWatch para responder descobertas de auditoria
+Exportar para análise adicional
+O CloudTrail pode ser uma ferramenta importante para auditoria de implantações serverless e reverter implantações não planejadas.
+
+Filas de mensagens mortas (DLQs) ajudam a capturar erros de aplicações que você não pode simplesmente descartar, mas deve responder. 
+
+Use DLQs para analisar falhas para acompanhamento ou correções de código.
+Disponível para eventos de sondagem assíncronos e sem streaming
+Pode ser um tópico do Amazon SNS ou fila do Amazon SQS
+Você pode configurar um DLQ a partir do console do Lambda.

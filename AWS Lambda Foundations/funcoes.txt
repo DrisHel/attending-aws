@@ -1,0 +1,52 @@
+ Com o Lambda, você pode usar a linguagem e o IDE com que está mais acostumado. O Lambda é compatível com:
+
+Node.js
+Python
+Java
+Go
+e C#.
+Em primeiro lugar para qualquer função do Lambda é o método handler. Esse é o ponto de entrada que o AWS Lambda 
+chama para começar a executar sua função do Lambda.
+O método handler sempre usa dois objetos: o objeto de evento e o objeto de contexto. O objeto de evento fornece 
+informações sobre o evento que acionou a função do Lambda. Ele poderia ser um objeto predefinido gerado por um serviço da AWS, 
+ou poderia ser um objeto personalizado definido pelo usuário na forma de uma string serializável. Por exemplo, pode ser um stream 
+pojo ou json. O objeto de contexto é gerado pela AWS e fornece metadados sobre a execução. Você pode usá-lo para interagir com o
+Lambda. Por exemplo, ele inclui awsRequestId, logStreamName e a função getRemainingTimeInMillis(). 
+Como suas funções existem somente quando há trabalho a ser feito, é especificamente importante que as aplicações serverless 
+tratem cada função como stateless. Ou seja, nenhuma informação sobre o estado deve ser salva dentro do contexto da própria função.
+
+
+Modelo de programação do AWS Lambda
+
+Trazer o seu próprio código
+
+Com o Lambda, você pode usar a linguagem e o IDE com os quais você está mais familiarizado e trazer o código que você já escreveu. O código 
+pode precisar de alguns ajustes para torná-lo serverless.
+
+O método handler é o ponto de entrada que o AWS Lambda chama para começar a executar sua função do Lambda. O método handler sempre usa dois objetos:
+o objeto de evento e o objeto de contexto.
+
+O objeto de evento fornece informações sobre o evento que acionou a função do Lambda. Ele poderia ser um objeto predefinido gerado por um serviço da AWS, 
+ou poderia ser um objeto personalizado definido pelo usuário na forma de uma string serializável. Por exemplo, pode ser um stream 
+pojo ou json.
+
+O objeto de contexto é gerado pela AWS e fornece metadados sobre a execução. Você pode usá-lo para interagir com o Lambda. 
+Por exemplo, ele inclui awsRequestld, logStreamName e a função getRemainingTimeInMillis().
+
+Melhores práticas de design:
+-----------------------------
+
+Lógica de negócios separada
+Gravar funções modulares
+Tratar funções como stateless
+Incluir apenas o que você precisa
+
+
+Malhores práticas para escrever o  código
+-----------------------------------------
+Incluir instruções de registro em log
+Incluir informações de resultado
+Usar variaveis de ambiente
+Evitar código recursivo
+
+

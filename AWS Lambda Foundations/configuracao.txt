@@ -1,0 +1,55 @@
+Três componentes principais da configuração
+
+Memória, tempo limite e simultaneidade estão no centro de como cada função executa. Para obter a melhor combinação para a 
+experiência desejada do cliente, teste em condições reais em relação ao pico de volume e use opções de monitoramento como o
+Amazon CloudWatch e o AWS X-Ray para garantir os resultados desejados para sua aplicação.
+
+Encontre o ponto ideal de poder vs. duração
+
+Você pode usar uma ferramenta de código aberto chamada Lambda Power Tuning para encontrar a melhor configuração para uma função. 
+A ferramenta pode ajudar você a visualizar e ajustar a configuração de memória/energia das funções do Lambda. A ferramenta é 
+executada em sua própria conta da AWS — com a tecnologia AWS Step Functions — e oferece suporte a três estratégias de otimização: 
+custo, velocidade e balanceamento.
+
+Execuções simultâneas
+
+A simultaneidade é a unidade na qual a escala é medida. Pense em execuções simultâneas como a capacidade de um restaurante para servir
+um certo número de clientes em um momento específico.
+
+É possível limitar a simultaneidade de uma função:
+---------------------------------------------------
+
+1- por razões de custo
+2 - para regular quanto tempo leva para processar um lote de eventos
+3 - para corresponder a ela com um recurso downstream
+
+É possível reservar a simultaneidade da função:
+-------------------------------------------------
+
+1 - para lidar com picos antecipados
+2 - para resolver erros de invocação
+
+
+Estimando a simultaneidade
+
+Para planejar adequadamente onde definir seus limites de simultaneidade, você precisa entender como as execuções simultâneas 
+são contadas e ser capaz de medir as execuções simultâneas em um teste realista.
+
+Estimando a simultaneidade
+
+Para planejar adequadamente onde definir seus limites de simultaneidade, você precisa entender como as execuções simultâneas 
+são contadas e ser capaz de medir as execuções simultâneas em um teste realista.
+
+Eventos de sondagem de stream
+–
+Ajuste a frequência de sondagem para solicitar a taxa para o processamento “tamanho certo”. Quando o Lambda sonda o stream, ele retira os registros atualmente em cada fragmento e invoca uma função simultânea do Lambda por fragmento para processar registros desse fragmento em ordem sequencial até que todos os registros desse fragmento desse evento de sondagem sejam processados com êxito (ou expirem).
+
+Taxa de solicitação = execuções simultâneas (nº de fragmentos)/duração média da função
+
+Eventos de sondagem sem streaming (SQS)
+–
+Com o SQS, há um custo sempre que você faz pesquisas, portanto, a integração do Lambda com o SQS foi projetada para encontrar o equilíbrio entre custo e performance. 
+
+
+
+O Lambda fará uma sondagem a uma taxa inicial de 5 por segundo. Se for percebido que a profundidade da fila continua a aumentar, a atividade de sondagem será dimensionada automaticamente até o número de execuções simultâneas da função chegar a 1000, que é o limite de simultaneidade da conta, ou ao limite de simultaneidade da função (opcional), o que for menor.
