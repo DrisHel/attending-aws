@@ -1,0 +1,21 @@
+O Amazon API Gateway simplifica o gerenciamento de APIs para aplicações sem servidor
+
+O API Gateway é um serviço de API totalmente gerenciado que permite definir, implantar e gerenciar APIs, dimensionadas sem a necessidade de gerenciar sua própria infraestrutura subjacente. O API Gateway fornece:
+
+Interfaces de programação de aplicações(APIs) RESTful
+Forte integração com o AWS Lambda
+Monitoramento e registro em log prontos para uso integrados ao Amazon CloudWatch
+Suporte para monitorar o custo das chamadasfeitas para suas APIs
+Preços baseados em chamadas feitas para suas APIs (além de taxas de transferência padrão)
+
+Recursos do desenvolvedor:
+
+A - Executar várias versões de uma API ao mesmo tempo
+B - Gerar SDKs rapidamente e importar/exportar para o Swagger
+C - Transformar ou validar dados de solicitação/resposta
+
+Recursos para gerenciar acesso a APIs:
+
+A- Reduz a latência e protege contra ataques distribuídos de negação de serviço (DDoS)
+B - Opções de autorização integradas e flexíveis usando funções do IAM, autorizadores do AWS Lambda ou Amazon Cognito
+C - Chaves de API para desenvolvedores de terceiros permitem gerenciar o acesso com planos e cotas de controle de utilização

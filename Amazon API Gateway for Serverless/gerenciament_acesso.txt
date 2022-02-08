@@ -1,0 +1,54 @@
+Autorizadores
+
+Existem três maneiras principais de autorizar chamadas de API para seus endpoints do API Gateway.
+Autorização do IAM
+Autorizadores do Lambda
+Autorizador do Lambda - tipo Token
+Autorizador do Lambda - tipo Request
+Autorizadores do Cognito
+
+Controle de utilização e planos de uso
+
+O API Gateway também permite gerenciar o volume de chamadas de API que são processadas por meio do endpoint da API. As chaves de API e os planos de uso permitem que você crie planos muito específicos adequados para sua empresa.
+
+Token de autenticação
+Chaves de API
+
+Com o API Gateway, você pode criar e distribuir chaves de API para seus clientes.  Os clientes incluem a chave de API através do cabeçalho x-API-chave em solicitações. 
+
+Planos de uso
+
+Você pode definir controles de utilização e limites de cota com base em chaves de API através do recurso de planos de uso. Você pode configurar planos de uso para:
+
+Controle de utilização de chave de API por segundo e intermitência
+Cota de chave de APIpor dia, semana, mês
+Uso de chave de APIpor registros de uso diário
+
+As configurações de controle de utilização são aplicadas em ordem
+
+O tipo e o nível de controle de utilização aplicado a uma solicitação depende de todos os limites envolvidos e são aplicados nesta ordem:
+
+Limites de controle de utilização por método e por cliente que você define para um estágio de API em um plano de uso.
+Limites de controle de utilização por cliente que você define em um plano de uso.
+Limites por método padrãoe limites por método individuais que você define nas configurações do estágio daAPI.
+O limite do nível da conta.
+
+As configurações de controle de utilização são aplicadas em ordem
+
+O tipo e o nível de controle de utilização aplicado a uma solicitação depende de todos os limites envolvidos e são aplicados nesta ordem:
+
+Limites de controle de utilização por método e por cliente que você define para um estágio de API em um plano de uso.
+Limites de controle de utilização por cliente que você define em um plano de uso.
+Limites por método padrãoe limites por método individuais que você define nas configurações do estágio daAPI.
+O limite do nível da conta.
+
+Permissões de gerenciamento
+
+Para permitir que um desenvolvedor de API crie e gerencie uma API no API Gateway, você precisa de políticas de permissões do IAM
+ que permitam a um desenvolvedor de API especificado criar, atualizar, implantar, exibir ou excluir as entidades de API necessárias. Para isso, crie uma política usando o 
+ formato apigateway:HTTP_VERB, associado ao recurso específico com o verbo que você deseja permitir ou negar na política.
+
+ Políticas de recursos
+
+Embora uma política do IAM seja usada para conceder permissão a um usuário, grupo ou função, você também pode aplicar políticas diretamente no API Gateway usando uma política de recursos. Uma política de recursos é um documento de política JSON anexado a uma API para
+limitar o acesso de usuários a partir de uma contaespecificada, intervalo de endereços IP, VPC ou VPC endpoint.

@@ -1,0 +1,38 @@
+Especificamente, você deve definir o tipo de endpoint de API necessário e os tipos de controle de acesso exigidos pelas suas aplicações.
+
+Com o Amazon API Gateway, você tem 3 tipos diferentes de endpoint para escolher. 
+
+Os endpoints otimizados para borda reduzem a latência quando as chamadas chegam de qualquer lugar do mundo na Internet.
+
+Os endpoints regionais reduzem a latência quando as chamadas à API são feitas a partir da mesma região que a API.
+
+Os endpoints privados expõem APIs somente dentro da VPC
+
+Isso permite criar APIs totalmente privadas que só podem ser invocadas por aplicações dentro de sua própria rede.
+
+É importante escolher o endpoint mais adequado para sua carga de trabalho, mas também é simples alterar o tipo de endpoint a qualquer momento.
+
+Tipos de endpoint do API Gateway
+
+Antes de começar a criar suas APIs, você precisará decidir o tipo de endpoint adequado para os padrões de uso e tráfego antecipados.
+
+Endpoint otimizado para borda
+Endpoins regional
+Enpoint privado
+
+Cache opcional do API Gateway
+
+Esta é uma configuração opcional, mas que deve ser definitivamente considerada com base em seus casos de uso.
+
+Por que usar o cache do API Gateway
+Configurar o cache por estágio da API
+Gerenciamento de cache do API Gateway
+
+Considerações de definição de preço
+
+Cobrança fixa por milhão de solicitações do API Gateway
+
+Com o API Gateway, você só paga quando suas APIs estiverem em uso, a um custo definido por milhão de solicitações.
+O nível gratuito do API Gateway inclui um milhão de chamadas de API por mês durante até 12 meses.
+Transferência de dados de saída a preços padrão da AWS
+Não há taxas de transferência de dados de saída para APIs privadas. Em vez disso, aplicam-se taxas do AWS Private Link.
