@@ -23,7 +23,7 @@ The course in question is AWS (Amazon Web Services), a cloud computing platform 
 - Module 8 :books: - Pricing and support
 - Module 9 :books: - Migration and innovation
 
-## :calendar: ** On 08/02/2022 the following topics were covered: **
+:calendar: **On 08/02/2022 the following topics were covered: **
 
 - Module 10 :books: - The journey to the cloud
 - Amazon API Gateway for Serverless Application
